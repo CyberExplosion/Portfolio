@@ -1,5 +1,9 @@
-<nav>
-    <ul class="flex flex-row justify-around">
+<nav class="flex flex-col justify-center items-center my-4 md:flex-row md:justify-around">
+    <!-- Logo for Khoi -->
+    <a class="my-6" href="#">
+        <img class="w-10" src="assets\\navIcons\\Image22.jpg">
+    </a>
+    <ul class="flex flex-row justify-around w-full md:w-1/2">
         <li *ngFor="let anchorInput of navAnchors">
             <app-nav-anchor 
             [iconPath]="anchorInput.imgPath" 
