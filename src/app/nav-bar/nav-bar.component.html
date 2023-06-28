@@ -1,0 +1,10 @@
+<nav>
+    <ul>
+        <li *ngFor="let anchorInput of navAnchors">
+            <app-nav-anchor 
+            [iconPath]="anchorInput.imgPath" 
+            [iconText]="anchorInput.text" 
+            [iconLink]="anchorInput.link"></app-nav-anchor>
+        </li>
+    </ul>
+</nav>
