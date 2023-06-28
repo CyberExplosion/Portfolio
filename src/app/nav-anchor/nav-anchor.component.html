@@ -1,6 +1,7 @@
-<div>
-    <a [href]="iconLink">
-        <img [src]="iconPath">
-        <p>{{iconText}}</p>
+<div class="transition-transform ease-in-out duration-1000 origin-center hover-underline">
+    <a [href]="iconLink" class="flex flex-row">
+        <img [src]="iconPath" class="w-10">
+        <p class="first-letter:capitalize">{{iconText}}</p>
     </a>
+    <div class="after-content bg-blue-400"></div>
 </div>
