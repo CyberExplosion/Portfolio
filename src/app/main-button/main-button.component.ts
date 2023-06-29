@@ -8,4 +8,5 @@ import { Component, Input } from '@angular/core';
 export class MainButtonComponent {
   @Input() buttonLogoPath?: String;
   @Input() buttonText?: String;
+  @Input() buttonLink?: String;
 }
