@@ -9,13 +9,34 @@
 
 <body>
     <app-nav-bar></app-nav-bar>
-    <div class="my-24">
-        <h1>Hi, I'm <span>Khoi</span></h1>
-        <p>I am currently a Master student at <a href="https://www.ucdavis.edu/">The University of California,
+    <div class="my-16 mx-auto text-center max-w-lg md:max-w-3xl">
+        <h1 class="viewport-header">
+            Hi, I'm <span class="text-blue-500">Khoi</span>
+        </h1>
+        <p class="my-2 viewport-desc">
+            I am currently a Master student at <a class="text-blue-500 underline underline-offset-4" href="https://www.ucdavis.edu/" target="_blank" rel="noopener noreferrer">The University of California,
                 Davis.</a> I spend my day working on projects with Python, C++, Typescript, React.js, Angular, PyTorch,
-            and AWS.</p>
-        <app-main-button buttonLogoPath="assets\\navIcons\\Image22.jpg" buttonText="Projects" buttonLink="#"></app-main-button>
+            and AWS.
+        </p>
+        <div class="my-8 flex flex-row justify-center">
+            <app-main-button 
+            class="px-1"
+            buttonLogoPath="assets\\navIcons\\Image22.jpg" 
+            buttonText="Projects"
+            buttonLink="#"></app-main-button>
+            <app-side-button 
+            class="px-1"
+            logoPath="assets\\navIcons\\Image22.jpg" 
+            logoText="GitHub" 
+            link="#"></app-side-button>
+        </div>
     </div>
+    <app-side-social-anchor 
+    class="linkedin"
+    link="#"
+    text="LinkedIn"
+    logoPath="assets\\navIcons\\Image22.jpg"
+    ></app-side-social-anchor>
 </body>
 
 </html>

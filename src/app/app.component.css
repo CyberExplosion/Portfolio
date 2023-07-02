@@ -1,0 +1,7 @@
+.viewport-header {
+    font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.viewport-desc {
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+}
