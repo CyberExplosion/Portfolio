@@ -13,4 +13,12 @@
     .linkedin a{
         @apply bg-blue-500 text-white
     }
+
+    .github a{
+        @apply bg-gray-700 text-white
+    }
+
+    .email a{
+        @apply bg-white text-gray-700
+    }
 }

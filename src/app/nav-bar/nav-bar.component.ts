@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavAnchorComponent } from '../nav-anchor/nav-anchor.component';
+import { NavAnchorComponent } from './nav-anchor/nav-anchor.component';
 import { INavAnchor, NAVANCHORS } from '../nav-configs';
 
 @Component({
