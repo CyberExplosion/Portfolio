@@ -8,6 +8,7 @@ import { MainButtonComponent } from './main-button/main-button.component';
 import { SideButtonComponent } from './side-button/side-button.component';
 import { SideSocialAnchorComponent } from './social-sidebar/side-social-anchor/side-social-anchor.component';
 import { SocialSidebarComponent } from './social-sidebar/social-sidebar.component';
+import { ProjectCardComponent } from './project-card/project-card.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SocialSidebarComponent } from './social-sidebar/social-sidebar.componen
     MainButtonComponent,
     SideButtonComponent,
     SideSocialAnchorComponent,
-    SocialSidebarComponent
+    SocialSidebarComponent,
+    ProjectCardComponent
   ],
   imports: [
     BrowserModule
