@@ -1,0 +1,10 @@
+name: Deploy to GitHub page via angular-cli-ghpages
+
+on: [push]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
