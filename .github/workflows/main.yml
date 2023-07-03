@@ -21,7 +21,7 @@ jobs:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       run: |
         npm install
-        npm run ng deploy --base-href=/Profolio/ --name="CyberExplosion" --email="minhkhoi632000@gmail.com" --no-silent
+        npm run ng deploy --no-silent --base-href=/Profolio/ --name="CyberExplosion" --email="minhkhoi632000@gmail.com" --message="What could possibly go wrong?"
 
 
 # name: Deploy to GitHub Pages via angular-cli-ghpages
