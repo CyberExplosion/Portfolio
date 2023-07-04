@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { IProjectInfo } from '../my-projects';
+import { TechLogoPath } from '../my-projects';
+import { INavAnchor } from '../nav-configs';
 
 @Component({
   selector: 'app-project-card',
@@ -7,8 +8,13 @@ import { IProjectInfo } from '../my-projects';
   styleUrls: ['./project-card.component.css']
 })
 export class ProjectCardComponent {
+  techLogoPath = TechLogoPath;
+
   @Input() imgPath?: String;
   @Input() title?: String;
   @Input() techList?: String[];
   @Input() description?: String;
+
+  @Input() mainBtnInfo?: INavAnchor;
+  @Input() sideBtnInfo?: INavAnchor;
 }

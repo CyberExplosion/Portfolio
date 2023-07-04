@@ -6,7 +6,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./side-button.component.css']
 })
 export class SideButtonComponent {
-  @Input() logoPath?: String;
-  @Input() logoText?: String;
-  @Input() link?: String;
+  @Input() buttonLogoPath?: String;
+  @Input() buttonText?: String;
+  @Input() buttonLink?: String;
+
+  @Input() smallButton: boolean = false;
 }

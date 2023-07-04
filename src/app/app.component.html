@@ -22,8 +22,8 @@
         <div class="my-8 flex flex-row justify-center">
             <app-main-button class="px-1" buttonLogoPath="assets\\navIcons\\Image22.jpg" buttonText="Projects"
                 buttonLink="#"></app-main-button>
-            <app-side-button class="px-1" logoPath="assets\\navIcons\\Image22.jpg" logoText="GitHub"
-                link="#"></app-side-button>
+            <app-side-button class="px-1" buttonLogoPath="assets\\navIcons\\Image22.jpg" buttonText="GitHub"
+                buttonLink="#"></app-side-button>
         </div>
     </div>
     <app-social-sidebar class="hidden lg:flex lg:flex-col lg:absolute lg:top-44 lg:-left-36"></app-social-sidebar>
@@ -32,7 +32,7 @@
 
     <ul *ngIf="projectInfos">
         <li *ngFor="let projectItem of projectInfos">
-            <app-project-card [imgPath]="projectItem.imgPath" [title]="projectItem.title" [techList]="projectItem.techList" [description]="projectItem.description"></app-project-card>
+            <app-project-card [imgPath]="projectItem.imgPath" [title]="projectItem.title" [techList]="projectItem.techList" [description]="projectItem.description" [mainBtnInfo]="projectItem.mainButton" [sideBtnInfo]="projectItem.sideButton"></app-project-card>
         </li>
     </ul>
     

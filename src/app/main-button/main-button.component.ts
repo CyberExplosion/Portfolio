@@ -9,4 +9,6 @@ export class MainButtonComponent {
   @Input() buttonLogoPath?: String;
   @Input() buttonText?: String;
   @Input() buttonLink?: String;
+  
+  @Input() smallButton: boolean = false;
 }
