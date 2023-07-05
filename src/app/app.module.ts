@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { NavAnchorComponent } from './nav-bar/nav-anchor/nav-anchor.component';
@@ -9,6 +10,7 @@ import { SideButtonComponent } from './side-button/side-button.component';
 import { SideSocialAnchorComponent } from './social-sidebar/side-social-anchor/side-social-anchor.component';
 import { SocialSidebarComponent } from './social-sidebar/social-sidebar.component';
 import { ProjectCardComponent } from './project-card/project-card.component';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { ProjectCardComponent } from './project-card/project-card.component';
     ProjectCardComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
