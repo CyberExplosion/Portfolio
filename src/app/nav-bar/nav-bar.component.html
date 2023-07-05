@@ -3,8 +3,8 @@
     <a class="my-6" href="#">
         <img class="w-10" src="assets\\navIcons\\Image22.jpg">
     </a>
-    <ul class="flex flex-row justify-around w-full md:w-1/2">
-        <li *ngFor="let anchorInput of navAnchors">
+    <ul class="flex flex-row justify-center w-full md:w-1/2">
+        <li class="mr-8 last-of-type:mr-0" *ngFor="let anchorInput of navAnchors">
             <app-nav-anchor 
             [iconPath]="anchorInput.imgPath" 
             [iconText]="anchorInput.text" 

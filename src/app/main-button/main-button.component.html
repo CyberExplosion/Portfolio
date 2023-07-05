@@ -1,8 +1,13 @@
-<a [href]="buttonLink" class="flex flex-row justify-center main-blue hover:bg-blue-700 text-white rounded" target="_blank" rel="noopener noreferrer" 
+<a [href]="buttonLink" class="flex flex-row justify-center border-2 border-transparent rounded main-blue hover:bg-blue-700 text-white" target="_blank" rel="noopener noreferrer" 
 [ngClass]="{
     'py-3 px-6': !smallButton,
-    'py-2 px-3': smallButton,
+    'py-1 px-3': smallButton,
 }">
     <img class="w-10 mr-1" [src]="buttonLogoPath">
     <p>{{buttonText}}</p>
 </a>
+
+<!-- <a class="flex flex-row justify-center bg-transparent text-blue-700 border-2 border-transparent rounded hover:main-blue hover:text-white hover:border-transparent" target="_blank" rel="noopener noreferrer" [href]="buttonLink" [ngClass]="{'py-3 px-6': !smallButton, 'py-1 px-3': smallButton,}">
+    <img class="w-10 mr-1" [src]="buttonLogoPath">
+    <p>{{buttonText}}</p>
+</a> -->
