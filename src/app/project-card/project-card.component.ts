@@ -9,21 +9,22 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   styleUrls: ['./project-card.component.css'],
   animations: [
     trigger('fadeInFromBottom', [
-      state('void', style({
+      state('out', style({
         opacity: 0,
         transform: 'translateY(10rem)'
       })),
-      state('*', style({
+      state('in', style({
         opacity: 1,
         transform: 'translateY(0)'
       })),
-      transition('void => *', animate('500ms ease-in'))
+      transition('out <=> in', animate('1s ease-in'))
     ])
   ]
 })
 
 export class ProjectCardComponent implements OnInit {
   techLogoPath = TechLogoPath;
+  isInViewport = false;
 
   @Input() imgPath?: String;
   @Input() title?: String;
@@ -33,12 +34,34 @@ export class ProjectCardComponent implements OnInit {
   @Input() mainBtnInfo?: INavAnchor;
   @Input() sideBtnInfo?: INavAnchor;
 
+  // static true == only get reference once finished rendered
   @ViewChild('fadeInElement', { static: true })
   fadeInElement!: ElementRef;
+  
+  ngOnInit (): void {
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0
+    };
 
-  isInViewport = false;
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(
+          entry => {
+            if (entry.isIntersecting) {
+              console.log("This shit intersect");
+              this.isInViewport = true;
+            } else {
+              console.log("Its not anymore");
+              this.isInViewport = false;
+            }
+          }
+        )
+      },
+      options
+    );
 
-  ngOnInit(): void {
-      
+    observer.observe(this.fadeInElement.nativeElement);
   }
 }

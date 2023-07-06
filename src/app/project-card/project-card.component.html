@@ -1,4 +1,4 @@
-<div [@fadeInFromBottom] #fadeInElement class="flex flex-col justify-center">
+<div [@fadeInFromBottom]="isInViewport ? 'in' : 'out'" #fadeInElement class="flex flex-col justify-center">
     <img [src]="imgPath">
     <h3 class="my-1 font-semibold text-xl">{{title}}</h3>
     <div class="my-3 flex flex-row justify-start">
