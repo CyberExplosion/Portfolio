@@ -1,12 +1,17 @@
 import { INavAnchor } from "./nav-configs";
 
 export const TechLogoPath : {[key: string]: string} = {
-    "amazon": "assets\\navIcons\\Image22.jpg",
-    "javascript": "assets\\navIcons\\Image22.jpg",
-    "react": "assets\\navIcons\\Image22.jpg"
+    "Amazon": "assets\\navIcons\\Image22.jpg",
+    "JavaScript": "assets\\navIcons\\Image22.jpg",
+    "React": "assets\\navIcons\\Image22.jpg",
+    "Vue": "assets\\navIcons\\Image22.jpg",
+    "Node.js": "assets\\navIcons\\Image22.jpg",
+    "PHP": "assets\\navIcons\\Image22.jpg",
+    "Laravel": "assets\\navIcons\\Image22.jpg",
+    "Python": "assets\\navIcons\\Image22.jpg",
 }
 
-export interface IProjectInfo{
+export interface IProjectInfo {
     imgPath: String;
     title: String;
     techList: String[];

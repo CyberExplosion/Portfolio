@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IProjectInfo, ProjectInfos } from './my-projects';
+import { IProjectInfo, ProjectInfos, TechLogoPath } from './my-projects';
 import * as Aos from 'aos';
 @Component({
   selector: 'app-root',
@@ -9,6 +9,7 @@ import * as Aos from 'aos';
 export class AppComponent implements OnInit {
   title = 'personal-portfolio';
   projectInfos?: IProjectInfo[];
+  techDict = TechLogoPath;
 
   ngOnInit(): void {
     this.projectInfos = ProjectInfos;
