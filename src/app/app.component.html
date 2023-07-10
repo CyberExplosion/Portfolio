@@ -28,10 +28,10 @@
     </div>
     <app-social-sidebar class="hidden lg:flex lg:flex-col lg:absolute lg:top-44 lg:-left-36"></app-social-sidebar>
 
-    <h2 class="mx-auto mb-12 text-center text-xl font-bold">My <span class="text-blue-500">Projects</span></h2>
+    <h2 class="mx-auto mt-48 mb-16 text-center text-2xl font-semibold">My <span class="text-blue-500">Projects</span></h2>
 
-    <ul *ngIf="projectInfos">
-        <li class="mb-10" *ngFor="let projectItem of projectInfos">
+    <ul class="mx-6" *ngIf="projectInfos">
+        <li data-aos="fade-up" class="mb-16 mx-auto max-w-6xl" *ngFor="let projectItem of projectInfos">
             <app-project-card [imgPath]="projectItem.imgPath" [title]="projectItem.title" [techList]="projectItem.techList" [description]="projectItem.description" [mainBtnInfo]="projectItem.mainButton" [sideBtnInfo]="projectItem.sideButton"></app-project-card>
         </li>
     </ul>

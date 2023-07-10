@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IProjectInfo, ProjectInfos } from './my-projects';
-
+import * as Aos from 'aos';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,5 +12,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.projectInfos = ProjectInfos;
+    Aos.init();
   }
 }
