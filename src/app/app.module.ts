@@ -11,6 +11,7 @@ import { SideSocialAnchorComponent } from './social-sidebar/side-social-anchor/s
 import { SocialSidebarComponent } from './social-sidebar/social-sidebar.component';
 import { ProjectCardComponent } from './project-card/project-card.component';
 import { SkillLogoComponent } from './skill-logo/skill-logo.component';
+import { EducationCardComponent } from './education-card/education-card.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { SkillLogoComponent } from './skill-logo/skill-logo.component';
     SideSocialAnchorComponent,
     SocialSidebarComponent,
     ProjectCardComponent,
-    SkillLogoComponent
+    SkillLogoComponent,
+    EducationCardComponent
   ],
   imports: [
     BrowserModule,

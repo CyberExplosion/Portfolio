@@ -1,0 +1,13 @@
+<div class="px-9 py-12 flex flex-row justify-between items-center">
+    <img class="w-20 mr-6 self-start" [src]="educationInfo?.imgPath">
+    <div class="flex-1">
+        <p>{{educationInfo?.graduateYear}}</p>
+        <p>{{educationInfo?.schoolName}} - {{educationInfo?.degree}}</p>
+        <p *ngIf="educationInfo?.gpa">GPA {{educationInfo?.gpa}}</p>
+        <ul class="ml-4 list-inside list-disc">
+            <li *ngFor="let info of educationInfo?.extraInfos">
+                {{info}}
+            </li>
+        </ul>
+    </div>
+</div>

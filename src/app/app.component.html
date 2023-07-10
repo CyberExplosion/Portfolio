@@ -39,16 +39,24 @@
         </li>
     </ul>
 
-    <div data-aos="fade" data-aos-offset="475">
+    <div data-aos="fade" data-aos-offset="475" class="mb-40">
         <h2 class="mb-16 mx-auto text-center text-2xl font-semibold">Technical <span
                 class="text-blue-500">Skills</span></h2>
-        <ul class="flex flex-row flex-wrap justify-center max-w-6xl mx-auto">
-            <li class="w-40 mr-12 mb-10 transition hover:scale-125 duration-300"
+        <ul class="flex flex-row flex-wrap justify-center max-w-5xl mx-auto">
+            <li class="w-24 mr-12 mb-10 transition hover:scale-125 duration-300"
                 *ngFor="let techs of techDict | keyvalue">
                 <app-skill-logo [techName]="techs.key"></app-skill-logo>
             </li>
         </ul>
     </div>
+
+    <h2 data-aos="fade" class="mb-16 mx-auto text-center text-2xl font-semibold">My <span class="text-blue-500">Education</span></h2>
+    <ul class="mx-6">
+        <li data-aos="zoom-in" class="mb-16 mx-auto max-w-3xl shadow-lg" *ngFor="let infoDict of eduInfos">
+            <app-education-card [educationInfo]="infoDict"></app-education-card>
+        </li>
+    </ul>
+
 </body>
 
 </html>
