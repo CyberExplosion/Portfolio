@@ -1,0 +1,10 @@
+<div class="flex flex-row justify-between">
+    <img class="w-12" src="assets\\navIcons\\Image22.jpg">
+    <ul class="flex flex-row">
+        <li *ngFor="let info of contactList">
+            <a [href]="info.link" target="_blank" rel="noopener noreferrer">
+                <img class="w-12" [src]="info.logoPath">
+            </a>
+        </li>
+    </ul>
+</div>
