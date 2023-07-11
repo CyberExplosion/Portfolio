@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IProjectInfo, ProjectInfos, TechLogoPath } from './my-projects';
-import * as Aos from 'aos';
 import { EducationInfos, IEducationInfo } from './my-educations';
+import * as Aos from 'aos';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
