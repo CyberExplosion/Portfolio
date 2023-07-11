@@ -30,9 +30,8 @@
 
     <h2 class="mx-auto mt-48 mb-16 text-center text-2xl font-semibold">My <span class="text-blue-500">Projects</span>
     </h2>
-
     <ul class="mx-6 mb-40" *ngIf="projectInfos">
-        <li data-aos="fade-up" class="mb-16 mx-auto max-w-6xl" *ngFor="let projectItem of projectInfos">
+        <li data-aos="fade-up" class="mb-16 last-of-type:mb-0 mx-auto max-w-6xl" *ngFor="let projectItem of projectInfos">
             <app-project-card [imgPath]="projectItem.imgPath" [title]="projectItem.title"
                 [techList]="projectItem.techList" [description]="projectItem.description"
                 [mainBtnInfo]="projectItem.mainButton" [sideBtnInfo]="projectItem.sideButton"></app-project-card>
@@ -51,12 +50,18 @@
     </div>
 
     <h2 data-aos="fade" class="mb-16 mx-auto text-center text-2xl font-semibold">My <span class="text-blue-500">Education</span></h2>
-    <ul class="mx-6">
-        <li data-aos="zoom-in" class="mb-16 mx-auto max-w-3xl shadow-lg" *ngFor="let infoDict of eduInfos">
+    <ul class="mx-6 mb-40">
+        <li data-aos="zoom-in" class="mb-10 last-of-type:mb-0 mx-auto max-w-4xl shadow-lg" *ngFor="let infoDict of eduInfos">
             <app-education-card [educationInfo]="infoDict"></app-education-card>
         </li>
     </ul>
 
+    <h2 data-aos="fade" class="mb-16 mx-auto text-center text-2xl font-semibold">Contact <span class="text-blue-500">Me</span></h2>
+    <ul class="mx-auto flex flex-col justify-center items-center md:flex md:flex-row md:flex-wrap md:justify-center md:items-center">
+        <li data-aos="fade" data-aos-anchor-placement="center-bottom" class="max-w-[17rem] mb-10 mx-20 shadow-lg" *ngFor="let contact of contactInfos">
+            <app-contact-card [contactInfo]="contact"></app-contact-card>
+        </li>
+    </ul>
 </body>
 
 </html>
