@@ -9,7 +9,7 @@
 
 <body>
     <app-nav-bar></app-nav-bar>
-    <div class="my-16 mx-auto text-center max-w-lg md:max-w-3xl">
+    <div class="my-16 mx-auto text-center max-w-sm md:max-w-3xl">
         <h1 class="viewport-header font-bold">
             Hi, I'm <span class="text-blue-500">Khoi</span>
         </h1>
@@ -20,7 +20,7 @@
             and AWS.
         </p>
         <div class="my-8 flex flex-row justify-center items-stretch">
-            <app-main-button class="mr-4" buttonLogoPath="assets\\navIcons\\Image22.jpg" buttonText="Projects"
+            <app-main-button class="mr-2" buttonLogoPath="assets\\navIcons\\Image22.jpg" buttonText="Projects"
                 buttonLink="#"></app-main-button>
             <app-side-button buttonLogoPath="assets\\navIcons\\Image22.jpg" buttonText="GitHub"
                 buttonLink="#"></app-side-button>
@@ -41,8 +41,8 @@
     <div data-aos="fade" class="mb-40">
         <h2 class="mb-16 mx-auto text-center text-2xl font-semibold">Technical <span
                 class="text-blue-500">Skills</span></h2>
-        <ul class="flex flex-row flex-wrap justify-center max-w-5xl mx-auto">
-            <li class="w-24 mr-12 mb-10 transition hover:scale-125 duration-300"
+        <ul class="flex flex-row flex-wrap justify-center items-center max-w-md md:max-w-5xl mx-auto">
+            <li class="w-24 mb-10 mx-5 transition hover:scale-125 duration-300"
                 *ngFor="let techs of techDict | keyvalue">
                 <app-skill-logo [techName]="techs.key"></app-skill-logo>
             </li>
@@ -57,8 +57,8 @@
     </ul>
 
     <h2 data-aos="fade" class="mb-16 mx-auto text-center text-2xl font-semibold">Contact <span class="text-blue-500">Me</span></h2>
-    <ul class="mx-32 flex flex-col justify-center items-center md:flex md:flex-row md:flex-wrap md:justify-center md:items-center">
-        <li data-aos="fade" class="max-w-[16rem] mb-10 mx-16 shadow-lg" *ngFor="let contact of contactInfos; let i = index" [attr.data-aos-delay] = "(i + 1) * 100">
+    <ul class="mx-32 flex flex-col justify-center items-center md:flex md:flex-row md:flex-wrap md:justify-around md:items-center">
+        <li data-aos="fade" class="mb-10 min-w-[17rem] shadow-lg" *ngFor="let contact of contactInfos; let i = index" [attr.data-aos-delay] = "(i + 1) * 100">
             <app-contact-card [contactInfo]="contact"></app-contact-card>
         </li>
     </ul>
