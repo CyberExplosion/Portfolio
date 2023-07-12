@@ -3,13 +3,23 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base{
+    body {
+        @apply bg-black
+    }
+}
+
 @layer utilities {
     .main-blue {
         @apply bg-blue-400;
     }
 }
 
-@layer components{
+@layer components{    
+    p, h1, h2, h3 {
+        @apply text-white
+    }
+    
     .linkedin a{
         @apply bg-blue-500 text-white
     }
