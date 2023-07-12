@@ -15,11 +15,7 @@
     }
 }
 
-@layer components{    
-    p, h1, h2, h3 {
-        @apply text-white
-    }
-    
+@layer components{        
     .linkedin a{
         @apply bg-blue-500 text-white
     }
