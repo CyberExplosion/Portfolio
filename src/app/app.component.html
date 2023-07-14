@@ -21,9 +21,9 @@
         </p>
         <div class="my-8 flex flex-row justify-center items-stretch">
             <app-main-button class="mr-2" buttonLogoPath="assets\\navIcons\\Image22.jpg" buttonText="Projects"
-                buttonLink="#"></app-main-button>
+                buttonLink="#projects" [openNewTab]="false"></app-main-button>
             <app-side-button buttonLogoPath="assets\\navIcons\\Image22.jpg" buttonText="GitHub"
-                buttonLink="#"></app-side-button>
+                buttonLink="https://github.com/CyberExplosion"></app-side-button>
         </div>
     </div>
     <div class="w-full">
@@ -96,7 +96,7 @@
         </ul>
     </section>
 
-    <app-scroll-top-btn class="fixed bottom-5 right-5 z-10"></app-scroll-top-btn>
+    <app-scroll-top-btn data-aos="fade" data-aos-anchor="#projects" data-aos-anchor-placement="top-top" class="fixed bottom-5 right-5 z-10"></app-scroll-top-btn>
 
     <footer class="mt-20 py-12 bg-black">
         <app-footer-nav></app-footer-nav>

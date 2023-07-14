@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { TechLogoPath } from '../my-projects';
+import { TechLogoPath } from '../tech-list';
 import { INavAnchor } from '../nav-configs';
 
 @Component({

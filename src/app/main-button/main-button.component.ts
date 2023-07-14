@@ -11,4 +11,5 @@ export class MainButtonComponent {
   @Input() buttonLink?: String;
   
   @Input() smallButton: boolean = false;
+  @Input() openNewTab: boolean = true;
 }

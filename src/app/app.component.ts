@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IProjectInfo, ProjectInfos, TechLogoPath } from './my-projects';
+import { IProjectInfo, ProjectInfos } from './my-projects';
+import { TechLogoPath } from './tech-list';
 import { EducationInfos, IEducationInfo } from './my-educations';
 import * as Aos from 'aos';
 import { ContactInfos, IContactInfo } from './my-contacts';

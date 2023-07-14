@@ -1,6 +1,6 @@
-<app-side-social-anchor class="linkedin" link="#" text="LinkedIn"
-    logoPath="assets\\navIcons\\Image22.jpg"></app-side-social-anchor>
-<app-side-social-anchor class="github" link="#" text="GitHub"
-    logoPath="assets\\navIcons\\Image22.jpg"></app-side-social-anchor>
-<app-side-social-anchor class="email" link="#" text="Email"
-    logoPath="assets\\navIcons\\Image22.jpg"></app-side-social-anchor>
+<app-side-social-anchor class="linkedin" [link]="socialDict[0].link" text="LinkedIn"
+    [logoPath]="socialDict[0].logoPath"></app-side-social-anchor>
+<app-side-social-anchor class="github" [link]="socialDict[1].link" text="GitHub"
+    [logoPath]="socialDict[1].logoPath"></app-side-social-anchor>
+<app-side-social-anchor class="email" [link]="socialDict[2].link" text="Email"
+    [logoPath]="socialDict[2].logoPath"></app-side-social-anchor>
