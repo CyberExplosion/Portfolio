@@ -4,8 +4,8 @@ export interface ITechLogoPath {
 
 export const TechLogoPath : ITechLogoPath = {
     "Amazon": "assets\\techIcons\\aws.svg",
-    "JavaScript": "assets\\navIcons\\Image22.jpg",
-    "React": "assets\\navIcons\\Image22.jpg",
+    "TypeScript": "assets\\techIcons\\typescript.svg",
+    "React": "assets\\techIcons\\react.svg",
     "Vue": "assets\\navIcons\\Image22.jpg",
     "Node.js": "assets\\navIcons\\Image22.jpg",
     "PHP": "assets\\navIcons\\Image22.jpg",

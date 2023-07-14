@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ContactInfos, IContactInfo } from '../my-contacts';
+import { SocialInfos, ISocial } from '../my-socials';
 
 @Component({
   selector: 'app-social-sidebar',
@@ -7,5 +7,5 @@ import { ContactInfos, IContactInfo } from '../my-contacts';
   styleUrls: ['./social-sidebar.component.css']
 })
 export class SocialSidebarComponent {
-  socialDict: IContactInfo[] = ContactInfos
+  socialDict: ISocial[] = SocialInfos;
 }

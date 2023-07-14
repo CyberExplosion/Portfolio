@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IContactInfo } from '../my-contacts';
+import { ContactInfos, IContactInfo } from '../my-contacts';
 
 @Component({
   selector: 'app-contact-card',

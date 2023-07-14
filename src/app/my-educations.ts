@@ -9,7 +9,7 @@ export interface IEducationInfo {
 
 export const EducationInfos: IEducationInfo[] = [
     {
-        imgPath: "assets\\navIcons\\Image22.jpg",
+        imgPath: "assets\\eduIcons\\graduate.png",
         graduateYear: "Expected 2025",
         schoolName: "University of California, Davis",
         degree: "Master of Science",
@@ -19,7 +19,7 @@ export const EducationInfos: IEducationInfo[] = [
         ]
     },
     {
-        imgPath: "assets\\navIcons\\Image22.jpg",
+        imgPath: "assets\\eduIcons\\undergrad.png",
         graduateYear: "2023",
         schoolName: "University of California, Davis",
         degree: "Bachelor of Science",

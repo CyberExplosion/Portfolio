@@ -7,21 +7,21 @@ export interface IContactInfo {
 
 export const ContactInfos: IContactInfo[] = [
     {
-        logoPath: "assets\\socialIcons\\linkedin.svg",
-        contactTitle: "LinkedIn",
-        linkTitle: "koinguyen",
-        link: "https://www.linkedin.com/in/koi-nguyen/"
+        logoPath: "assets\\contactIcons\\contactMail.svg",
+        contactTitle: "Email",
+        linkTitle: "kminhnguyen@outlook.com",
+        link: "mailto:kminhnguyen@outlook.com"
     },
     {
-        logoPath: "assets\\socialIcons\\github.svg",
+        logoPath: "assets\\contactIcons\\contactGithub.svg",
         contactTitle: "GitHub",
         linkTitle: "CyberExplosion",
         link: "https://github.com/CyberExplosion"
     },
     {
-        logoPath: "assets\\socialIcons\\mail.svg",
-        contactTitle: "Email",
-        linkTitle: "kminhnguyen@outlook.com",
-        link: "mailto:kminhnguyen@outlook.com"
+        logoPath: "assets\\contactIcons\\contactLinkedin.svg",
+        contactTitle: "LinkedIn",
+        linkTitle: "koinguyen",
+        link: "https://www.linkedin.com/in/koi-nguyen/"
     },
 ]

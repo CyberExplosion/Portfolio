@@ -88,8 +88,8 @@
         <h2 data-aos="fade" class="mb-16 mx-auto text-center text-2xl font-semibold">Contact <span
                 class="text-blue-500">Me</span></h2>
         <ul
-            class="mx-32 flex flex-col justify-center items-center md:flex md:flex-row md:flex-wrap md:justify-around md:items-center">
-            <li data-aos="fade" class="mb-10 min-w-[17rem] shadow-lg"
+            class="max-w-6xl mx-auto flex flex-col justify-between items-center md:flex md:flex-row md:flex-wrap md:justify-around md:items-center">
+            <li data-aos="fade" class="mb-10 min-w-[16rem] shadow-lg"
                 *ngFor="let contact of contactInfos; let i = index" [attr.data-aos-delay]="(i + 1) * 100">
                 <app-contact-card [contactInfo]="contact"></app-contact-card>
             </li>

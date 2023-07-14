@@ -4,9 +4,9 @@
         <h3 class="my-1 font-semibold text-xl">{{title}}</h3>
         <div class="my-3 flex flex-row justify-start">
             <h4 class="font-semibold text-gray-500">Made with: </h4>
-            <ul class="flex flex-row">
+            <ul class="flex flex-row items-baseline">
                 <li *ngFor="let tech of techList">
-                    <img class="w-10 mx-5" [src]="techLogoPath[tech.toString()]">
+                    <img class="w-8 mx-3" [src]="techLogoPath[tech.toString()]">
                 </li>
             </ul>
         </div>
