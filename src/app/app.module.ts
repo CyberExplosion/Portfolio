@@ -14,6 +14,7 @@ import { SkillLogoComponent } from './skill-logo/skill-logo.component';
 import { EducationCardComponent } from './education-card/education-card.component';
 import { ContactCardComponent } from './contact-card/contact-card.component';
 import { FooterNavComponent } from './footer-nav/footer-nav.component';
+import { ScrollTopBtnComponent } from './scroll-top-btn/scroll-top-btn.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { FooterNavComponent } from './footer-nav/footer-nav.component';
     SkillLogoComponent,
     EducationCardComponent,
     ContactCardComponent,
-    FooterNavComponent
+    FooterNavComponent,
+    ScrollTopBtnComponent
   ],
   imports: [
     BrowserModule,
