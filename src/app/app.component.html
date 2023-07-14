@@ -7,7 +7,7 @@
     <title>Profolio</title>
 </head>
 
-<body class="bg-white">
+<body class="bg-white scroll-smooth">
     <app-nav-bar></app-nav-bar>
     <div class="my-16 mx-auto text-center max-w-sm md:max-w-3xl">
         <h1 class="viewport-header font-bold">
@@ -33,46 +33,68 @@
     </div>
     <app-social-sidebar class="hidden lg:flex lg:flex-col lg:absolute lg:top-44 lg:-left-36"></app-social-sidebar>
 
-    <h2 class="mx-auto mt-32 mb-16 text-center text-2xl font-semibold">My <span class="text-blue-500">Projects</span>
-    </h2>
-    <ul class="mx-6 mb-40" *ngIf="projectInfos">
-        <li data-aos="fade-up" class="mb-16 last-of-type:mb-0 mx-auto max-w-6xl"
-            *ngFor="let projectItem of projectInfos">
-            <app-project-card [imgPath]="projectItem.imgPath" [title]="projectItem.title"
-                [techList]="projectItem.techList" [description]="projectItem.description"
-                [mainBtnInfo]="projectItem.mainButton" [sideBtnInfo]="projectItem.sideButton"></app-project-card>
-        </li>
-    </ul>
-
-    <div data-aos="fade" class="mb-40">
-        <h2 class="mb-16 mx-auto text-center text-2xl font-semibold">Technical <span class="text-blue-500">Skills</span>
+    <section id="projects">
+        <h2 class="mx-auto mt-32 mb-16 text-center text-2xl font-semibold">My <span
+                class="text-blue-500">Projects</span>
         </h2>
-        <ul class="flex flex-row flex-wrap justify-center items-center max-w-md md:max-w-5xl mx-auto">
-            <li class="w-24 mb-10 mx-5 transition hover:scale-125 duration-300"
-                *ngFor="let techs of techDict | keyvalue">
-                <app-skill-logo [techName]="techs.key"></app-skill-logo>
+        <ul class="mx-6 mb-20" *ngIf="projectInfos">
+            <li data-aos="fade-up" class="mb-16 last-of-type:mb-0 mx-auto max-w-6xl"
+                *ngFor="let projectItem of projectInfos">
+                <app-project-card [imgPath]="projectItem.imgPath" [title]="projectItem.title"
+                    [techList]="projectItem.techList" [description]="projectItem.description"
+                    [mainBtnInfo]="projectItem.mainButton" [sideBtnInfo]="projectItem.sideButton"></app-project-card>
             </li>
         </ul>
+    </section>
+
+    <div class="w-full mb-20">
+        <svg viewBox="0 0 2560 100">
+            <polygon points="2560,0 2560,100 0,100"></polygon>
+        </svg>
     </div>
 
-    <h2 data-aos="fade" class="mb-16 mx-auto text-center text-2xl font-semibold">My <span
-            class="text-blue-500">Education</span></h2>
-    <ul class="mx-6 mb-40">
-        <li data-aos="zoom-in" class="mb-10 last-of-type:mb-0 mx-auto max-w-4xl shadow-lg"
-            *ngFor="let infoDict of eduInfos">
-            <app-education-card [educationInfo]="infoDict"></app-education-card>
-        </li>
-    </ul>
+    <section id="skills">
+        <div data-aos="fade" class="mb-20">
+            <h2 class="mb-16 mx-auto text-center text-2xl font-semibold">Technical <span
+                    class="text-blue-500">Skills</span>
+            </h2>
+            <ul class="flex flex-row flex-wrap justify-center items-center max-w-md md:max-w-5xl mx-auto">
+                <li class="w-24 mb-10 mx-5 transition hover:scale-125 duration-300"
+                    *ngFor="let techs of techDict | keyvalue">
+                    <app-skill-logo [techName]="techs.key"></app-skill-logo>
+                </li>
+            </ul>
+        </div>
+    </section>
 
-    <h2 data-aos="fade" class="mb-16 mx-auto text-center text-2xl font-semibold">Contact <span
-            class="text-blue-500">Me</span></h2>
-    <ul
-        class="mx-32 flex flex-col justify-center items-center md:flex md:flex-row md:flex-wrap md:justify-around md:items-center">
-        <li data-aos="fade" class="mb-10 min-w-[17rem] shadow-lg" *ngFor="let contact of contactInfos; let i = index"
-            [attr.data-aos-delay]="(i + 1) * 100">
-            <app-contact-card [contactInfo]="contact"></app-contact-card>
-        </li>
-    </ul>
+    <div class="w-full mb-20">
+        <svg viewBox="0 0 2560 100">
+            <polygon points="2560,0 2560,100 0,100"></polygon>
+        </svg>
+    </div>
+
+    <section id="educations">
+        <h2 data-aos="fade" class="mb-16 mx-auto text-center text-2xl font-semibold">My <span
+                class="text-blue-500">Education</span></h2>
+        <ul class="mx-6 mb-40">
+            <li data-aos="zoom-in" class="mb-10 last-of-type:mb-0 mx-auto max-w-4xl shadow-lg"
+                *ngFor="let infoDict of eduInfos">
+                <app-education-card [educationInfo]="infoDict"></app-education-card>
+            </li>
+        </ul>
+    </section>
+
+    <section id="contacts">
+        <h2 data-aos="fade" class="mb-16 mx-auto text-center text-2xl font-semibold">Contact <span
+                class="text-blue-500">Me</span></h2>
+        <ul
+            class="mx-32 flex flex-col justify-center items-center md:flex md:flex-row md:flex-wrap md:justify-around md:items-center">
+            <li data-aos="fade" class="mb-10 min-w-[17rem] shadow-lg"
+                *ngFor="let contact of contactInfos; let i = index" [attr.data-aos-delay]="(i + 1) * 100">
+                <app-contact-card [contactInfo]="contact"></app-contact-card>
+            </li>
+        </ul>
+    </section>
 
     <footer class="mt-20 py-12 bg-black">
         <app-footer-nav></app-footer-nav>

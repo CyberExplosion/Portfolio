@@ -5,8 +5,8 @@ export interface INavAnchor {
 }
 
 export const NAVANCHORS = [
-    { imgPath: 'assets\\navIcons\\Image22.jpg', text: 'Projects', link: "#" },
-    { imgPath: 'assets\\navIcons\\Image22.jpg', text: 'Skills', link: "#" },
-    { imgPath: 'assets\\navIcons\\Image22.jpg', text: 'Education', link: "#" },
-    { imgPath: 'assets\\navIcons\\Image22.jpg', text: 'Contact', link: "#" },
+    { imgPath: 'assets\\navIcons\\lightBulb.svg', text: 'Projects', link: "#projects" },
+    { imgPath: 'assets\\navIcons\\cog.svg', text: 'Skills', link: "#skills" },
+    { imgPath: 'assets\\navIcons\\cap.svg', text: 'Educations', link: "#educations" },
+    { imgPath: 'assets\\navIcons\\envelope.svg', text: 'Contacts', link: "#contacts" },
 ]

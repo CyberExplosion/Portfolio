@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { NavAnchorComponent } from './nav-anchor/nav-anchor.component';
+import { Component } from '@angular/core';
 import { INavAnchor, NAVANCHORS } from '../nav-configs';
 
 @Component({
@@ -7,10 +6,6 @@ import { INavAnchor, NAVANCHORS } from '../nav-configs';
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.css']
 })
-export class NavBarComponent implements OnInit{
-  navAnchors?: INavAnchor[];
-
-  ngOnInit (): void {
-    this.navAnchors = NAVANCHORS;
-  }
+export class NavBarComponent {
+  navAnchors?: INavAnchor[] = NAVANCHORS;
 }
