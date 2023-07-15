@@ -1,10 +1,9 @@
 <div class="flex flex-col items-center max-w-7xl mx-auto sm:flex sm:flex-row sm:justify-between sm:items-baseline">
     <img class="w-12 mx-6 mb-6 sm:mb-0" src="assets\\navIcons\\Image22.jpg">
     <ul class="mx-2 flex flex-row justify-around">
-        <li class="mx-4 transition duration-300 hover:-translate-y-4 hover:main-blue" *ngFor="let info of footerInfos">
+        <li class="mx-4 transition duration-300 hover:-translate-y-4 hover:main-blue" *ngFor="let info of footerInfos; let i = index">
             <a [href]="info.link" target="_blank" rel="noopener noreferrer">
-                <!-- <div [innerHTML]="info.iconSVG"></div> -->
-                <p>{{info.iconSVG}}</p>
+                <div class="w-32" [innerHTML]="safeSVGList[i]"></div>
             </a>
         </li>
     </ul>
