@@ -27,6 +27,14 @@
     .email a{
         @apply bg-white text-gray-700
     }
+
+    .svg-footer svg {
+        @apply fill-white
+    }
+    
+    .svg-footer svg:hover {
+        @apply fill-blue-500
+    }
 }
 
 html{
