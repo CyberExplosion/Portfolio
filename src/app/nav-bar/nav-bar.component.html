@@ -4,7 +4,7 @@
         <img class="w-10" src="assets\\navIcons\\Image22.jpg">
     </a>
     <ul class="flex flex-row justify-center">
-        <li class="mx-4" *ngFor="let anchorInput of navAnchors">
+        <li class="mx-3" *ngFor="let anchorInput of navAnchors">
             <app-nav-anchor [iconPath]="anchorInput.imgPath" [iconText]="anchorInput.text" [iconLink]="anchorInput.link"></app-nav-anchor>
         </li>
     </ul>
