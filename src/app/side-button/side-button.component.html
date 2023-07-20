@@ -1,4 +1,7 @@
-<a class="flex flex-row justify-center bg-transparent text-blue-700 border-2 transition-colors border-blue-500 rounded hover:main-blue hover:text-white hover:border-transparent" target="_blank" rel="noopener noreferrer" [href]="buttonLink" [ngClass]="{'py-3 px-6': !smallButton, 'py-1 px-3': smallButton,}">
-    <img class="w-10 mr-1" [src]="buttonLogoPath">
+<a class="group flex flex-row justify-center bg-transparent text-blue-700 border-2 transition-colors border-blue-500 rounded hover:main-blue hover:text-white hover:border-transparent" target="_blank" rel="noopener noreferrer" [href]="buttonLink" [ngClass]="{'py-3 px-6': !smallButton, 'py-1 px-3': smallButton,}">
+    <div>
+        <ng-content></ng-content>
+    </div>
+    <!-- <img class="w-10 mr-1" [src]="buttonLogoPath"> -->
     <p>{{buttonText}}</p>
 </a>

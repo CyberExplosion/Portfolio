@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-side-button',
@@ -6,9 +7,15 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./side-button.component.css']
 })
 export class SideButtonComponent {
-  @Input() buttonLogoPath?: String;
+  constructor(private sanitizer: DomSanitizer) { }
+  safeSvgHTML?: SafeHtml;
+
   @Input() buttonText?: String;
   @Input() buttonLink?: String;
 
   @Input() smallButton: boolean = false;
+
+  transform (svgHtml: string): SafeHtml{
+    return this.sanitizer.bypassSecurityTrustHtml(svgHtml);
+  }
 }
