@@ -33,7 +33,7 @@
             </div>
         </div>
     </section>
-    <div class="w-full m-0">
+    <div class="w-full">
         <svg class="fill-white" viewBox="0 0 2560 100">
             <polygon points="2560,0 2560,100 0,100"></polygon>
         </svg>
@@ -41,10 +41,10 @@
     <app-social-sidebar class="hidden lg:flex lg:flex-col lg:absolute lg:top-44 lg:-left-36"></app-social-sidebar>
 
     <section id="projects" class="bg-white">
-        <h2 class="mx-auto mb-16 text-center text-2xl font-semibold">My <span
+        <h2 class="mx-auto mb-16 pt-16 text-center text-2xl font-semibold">My <span
                 class="text-blue-500">Projects</span>
         </h2>
-        <ul class="mx-6 mb-20" *ngIf="projectInfos">
+        <ul class="mx-6" *ngIf="projectInfos">
             <li data-aos="fade-up" class="mb-16 last-of-type:mb-0 mx-auto max-w-6xl"
                 *ngFor="let projectItem of projectInfos">
                 <app-project-card [imgPath]="projectItem.imgPath" [title]="projectItem.title"
@@ -52,15 +52,16 @@
                     [mainBtnInfo]="projectItem.mainButton" [sideBtnInfo]="projectItem.sideButton"></app-project-card>
             </li>
         </ul>
+        <div class="w-full mt-32">
+            <svg class="fill-black" viewBox="0 0 2560 100">
+                <!-- <polygon points="2560,0 2560,100 0,100"></polygon> -->
+                <polygon points="0,100 2560,0 2560,100"></polygon>
+            </svg>
+        </div>
     </section>
 
-    <div class="w-full mb-20">
-        <svg viewBox="0 0 2560 100">
-            <polygon points="2560,0 2560,100 0,100"></polygon>
-        </svg>
-    </div>
 
-    <section id="skills">
+    <section class="mt-20 text-white" id="skills">
         <div data-aos="fade" class="mb-20">
             <h2 class="mb-16 mx-auto text-center text-2xl font-semibold">Technical <span
                     class="text-blue-500">Skills</span>
@@ -74,16 +75,15 @@
         </div>
     </section>
 
-    <div class="w-full mb-20">
-        <svg viewBox="0 0 2560 100">
+    <div class="w-full">
+        <svg class="fill-white stroke-2 stroke-white" viewBox="0 0 2560 100">
             <polygon points="2560,0 2560,100 0,100"></polygon>
         </svg>
     </div>
-
-    <section id="educations">
-        <h2 data-aos="fade" class="mb-16 mx-auto text-center text-2xl font-semibold">My <span
+    <section class="bg-white" id="educations">
+        <h2 data-aos="fade" class="pt-10 mb-16 mx-auto text-center text-2xl font-semibold">My <span
                 class="text-blue-500">Education</span></h2>
-        <ul class="mx-6 mb-40">
+        <ul class="mx-6">
             <li data-aos="zoom-in" class="mb-10 last-of-type:mb-0 mx-auto max-w-4xl shadow-lg"
                 *ngFor="let infoDict of eduInfos">
                 <app-education-card [educationInfo]="infoDict"></app-education-card>
@@ -91,12 +91,12 @@
         </ul>
     </section>
 
-    <section id="contacts">
+    <section class="bg-white pt-40 md:pb-20" id="contacts">
         <h2 data-aos="fade" class="mb-16 mx-auto text-center text-2xl font-semibold">Contact <span
                 class="text-blue-500">Me</span></h2>
         <ul
             class="max-w-6xl mx-auto flex flex-col justify-between items-center md:flex md:flex-row md:flex-wrap md:justify-around md:items-center">
-            <li data-aos="fade" class="mb-10 min-w-[16rem] shadow-lg"
+            <li data-aos="fade" class="mb-10 md:mb-0 min-w-[16rem] shadow-lg"
                 *ngFor="let contact of contactInfos; let i = index" [attr.data-aos-delay]="(i + 1) * 100">
                 <app-contact-card [contactInfo]="contact"></app-contact-card>
             </li>
