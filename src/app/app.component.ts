@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
   iconHtml?: ICommonIcons = CommonIcons;
 
   techDict = TechLogoPath;
-  commonIconSafeHTML?: { [key: string]: SafeHtml } = {};
+  safeSvgHtml?: { [key: string]: SafeHtml } = {};
 
   transform (svgHtml: string): SafeHtml{
     return this.sanitizer.bypassSecurityTrustHtml(svgHtml);
@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
     for (const key in CommonIcons) {
       if (Object.prototype.hasOwnProperty.call(CommonIcons, key)) {
         const element = CommonIcons[key];
-        this.commonIconSafeHTML![key] = this.transform(element);
+        this.safeSvgHtml![key] = this.transform(element);
       }
     }
   }

@@ -35,8 +35,16 @@
         @apply fill-blue-500
     }
 
+    
+    .svg-white svg {
+        @apply fill-white stroke-black stroke-1
+    }
+    
     .svg-sideBtn svg {
         @apply fill-blue-500 transition-colors group-hover:fill-white
+    }
+    .svg-mainBtn svg {
+        @apply fill-white stroke-white stroke-2
     }
 }
 

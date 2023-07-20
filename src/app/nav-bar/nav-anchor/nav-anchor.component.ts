@@ -6,7 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./nav-anchor.component.css']
 })
 export class NavAnchorComponent {
-  @Input() iconPath?: String;
   @Input() iconText?: String;
   @Input() iconLink?: String;
 }

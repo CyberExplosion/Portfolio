@@ -1,7 +1,7 @@
 <div class="transition-transform ease-in-out duration-1000 origin-center hover-underline">
     <a [href]="iconLink" class="flex flex-row justify-between items-center">
-        <div class="hidden lg:block lg:w-6">
-            <img [src]="iconPath">
+        <div class="hidden lg:block lg:w-7">
+            <ng-content></ng-content>
         </div>
         <p class="first-letter:capitalize font-semibold text-base">{{iconText}}</p>
     </a>

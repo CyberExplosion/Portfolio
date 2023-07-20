@@ -5,7 +5,9 @@
     </a>
     <ul class="flex flex-row justify-center">
         <li class="mx-3" *ngFor="let anchorInput of navAnchors">
-            <app-nav-anchor [iconPath]="anchorInput.imgPath" [iconText]="anchorInput.text" [iconLink]="anchorInput.link"></app-nav-anchor>
+            <app-nav-anchor [iconText]="anchorInput.text" [iconLink]="anchorInput.link">
+                <div class="svg-white" [innerHTML]="safeHtmlIcons![anchorInput.logo]"></div>
+            </app-nav-anchor>
         </li>
     </ul>
 </nav>
