@@ -36,7 +36,7 @@ class Particle {
     sat: number
     light: number
     maxSpeed: number
-    private p5Instance!: p5;
+    private p5Instance: any
 
     constructor(x: number, y: number) {
         this.x = x
@@ -52,6 +52,31 @@ class Particle {
         this.sat = this.hueSemen > .5 ? opt.s1 : opt.s2
         this.light = this.hueSemen > .5 ? opt.l1 : opt.l2
         this.maxSpeed = this.hueSemen > .5 ? 3 : 2
+        this.p5Instance = new p5(this.sketch)
+    }
+
+    private sketch (p: any) {
+        p.setup = () => {
+            p.createCanvas(window.innerWidth, window.innerHeight)
+            for (let i = 0; i < opt.particles; i++) {
+                Particles.push(new Particle(Math.random() * window.innerWidth, Math.random() * window.innerHeight))
+            }
+            strokeWeight(opt.strokeWeight)
+        }
+
+        p.draw = () => {
+            time++
+            background(0, 100 - opt.tail)
+
+            Particles.forEach(element => {
+                element.update()
+                element.render()
+            });
+        }
+
+        p.windowResized = () => {
+            resizeCanvas(windowWidth, windowHeight);
+        }
     }
 
     randomize () {
