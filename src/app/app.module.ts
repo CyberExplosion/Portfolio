@@ -15,6 +15,7 @@ import { EducationCardComponent } from './education-card/education-card.componen
 import { ContactCardComponent } from './contact-card/contact-card.component';
 import { FooterNavComponent } from './footer-nav/footer-nav.component';
 import { ScrollTopBtnComponent } from './scroll-top-btn/scroll-top-btn.component';
+import { FlowFieldComponent } from './flow-field/flow-field.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { ScrollTopBtnComponent } from './scroll-top-btn/scroll-top-btn.component
     EducationCardComponent,
     ContactCardComponent,
     FooterNavComponent,
-    ScrollTopBtnComponent
+    ScrollTopBtnComponent,
+    FlowFieldComponent
   ],
   imports: [
     BrowserModule,
