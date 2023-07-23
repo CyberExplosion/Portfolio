@@ -15,7 +15,7 @@ import { EducationCardComponent } from './education-card/education-card.componen
 import { ContactCardComponent } from './contact-card/contact-card.component';
 import { FooterNavComponent } from './footer-nav/footer-nav.component';
 import { ScrollTopBtnComponent } from './scroll-top-btn/scroll-top-btn.component';
-import { FlowFieldComponent } from './flow-field/flow-field.component';
+import { ProceduralBgComponent } from './procedural-bg/procedural-bg.component';
 
 
 @NgModule({
@@ -33,7 +33,7 @@ import { FlowFieldComponent } from './flow-field/flow-field.component';
     ContactCardComponent,
     FooterNavComponent,
     ScrollTopBtnComponent,
-    FlowFieldComponent
+    ProceduralBgComponent,
   ],
   imports: [
     BrowserModule,

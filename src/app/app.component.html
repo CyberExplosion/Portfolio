@@ -7,10 +7,9 @@
     <title>Profolio</title>
 </head>
 
-<body class="bg-black">
+<body class="bg-transparent">
     <section id="title" class="mb-28 mt-3">
-        <app-flow-field></app-flow-field>
-        
+        <app-procedural-bg class="absolute -z-10"></app-procedural-bg>
         <app-nav-bar class="text-white"></app-nav-bar>
         <div class="mx-auto mt-20 text-white text-center max-w-sm md:max-w-3xl">
             <h1 class="viewport-header font-bold">
@@ -25,8 +24,7 @@
                 and AWS.
             </p>
             <div class="mt-8 flex flex-row justify-center items-stretch">
-                <app-main-button class="mr-2" buttonText="Projects"
-                    buttonLink="#projects" [openNewTab]="false">
+                <app-main-button class="mr-2" buttonText="Projects" buttonLink="#projects" [openNewTab]="false">
                     <div class="w-4 mr-1 svg-mainBtn" [innerHTML]="safeSvgHtml!['lightBulb']"></div>
                 </app-main-button>
                 <app-side-button buttonText="GitHub" buttonLink="https://github.com/CyberExplosion">

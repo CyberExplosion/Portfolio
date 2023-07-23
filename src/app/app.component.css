@@ -5,3 +5,13 @@
 .viewport-desc {
     font-size: clamp(1.25rem, 2vw, 1.5rem);
 }
+
+/* .animated-bg div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: -1;
+} */
