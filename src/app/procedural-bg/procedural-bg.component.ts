@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef } from '@angular/core';
 
-declare var THREEx: any
 declare var THREE: any
+declare var THREEx: any
 
 @Component({
   selector: 'app-procedural-bg',
@@ -46,7 +46,7 @@ export class ProceduralBgComponent implements AfterViewInit {
     light3.position.set(-0.5, -0.5, -2)
     scene.add(light3)
 
-    const heightMap = THREEx.Terrain.allocateHeightMap(256, 256)
+    const heightMap = THREEx.Terrain.allocateHeightMap(56, 56)
     THREEx.Terrain.simplexHeightMap(heightMap)
     const geometry = THREEx.Terrain.heightMapToPlaneGeometry(heightMap)
     THREEx.Terrain.heightMapToVertexColor(heightMap, geometry)
@@ -68,7 +68,7 @@ export class ProceduralBgComponent implements AfterViewInit {
 
     /* Play around with the camera */
     onRenderFcts.push(function (delta: number, now: number) {
-      mesh.rotation.z += 0.2 * delta;
+      mesh.rotation.z += 0.1 * delta;
     })
     onRenderFcts.push(function () {
       renderer.render(scene, camera);
@@ -78,7 +78,7 @@ export class ProceduralBgComponent implements AfterViewInit {
     function animate (nowMsec: number) {
       requestAnimationFrame(animate);
       lastTimeMsec = onRenderFcts.length === 0 ? null : (lastTimeMsec || nowMsec - 1000 / 60);
-      const deltaMsec = Math.min(200, nowMsec - (lastTimeMsec as number));
+      const deltaMsec = Math.min(500, nowMsec - (lastTimeMsec as number));
       lastTimeMsec = nowMsec;
 
       onRenderFcts.forEach(function (onRenderFct) {
