@@ -1,9 +1,6 @@
 import { AfterViewInit, Component, ElementRef } from '@angular/core';
-
-declare var THREE: any
-declare var TweenMax: any
-declare var $: any
-declare var OBJLoader: any
+import * as THREE from 'three'
+import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
 
 @Component({
   selector: 'app-animface-bg',
@@ -11,131 +8,108 @@ declare var OBJLoader: any
   styleUrls: ['./animface-bg.component.css']
 })
 export class AnimfaceBgComponent implements AfterViewInit {
-  constructor(private elementRef: ElementRef) { }
+  constructor(private elementRef: ElementRef) {
+    this.windowHalfX = window.innerWidth / 2
+    this.windowHalfY = window.innerHeight / 2
+  }
 
+  private camera!: THREE.PerspectiveCamera;
+  private scene!: THREE.Scene
+  private renderer!: THREE.WebGLRenderer
+  private mouseX = 0
+  private mouseY = 0
+  private windowHalfX: number
+  private windowHalfY: number
 
 
   ngAfterViewInit (): void {
-    this.initializeBackground();
+    this.initCamScene();
+    this.initObject();
+    this.initRenderer();
+    this.animate();
+
+    window.addEventListener('resize', () => this.onWindowResize(), false)
+    this.elementRef.nativeElement.addEventListener('mousemove', (event: MouseEvent) => this.onDocumentMouseMove(event), false)
   }
 
-  private initializeBackground (): void {
-    var site: any = site || {};
-    site.window = $(window);
-    site.document = $(document);
-    site.Width = site.window.width();
-    site.Height = site.window.height();
+  private initCamScene (): void {
+    this.camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 1, 2000);
+    this.camera.position.z = 300;
+    this.scene = new THREE.Scene();
+  }
 
-    var Background: any = function () {
+  private initObject (): void {
+    const p_geom = new THREE.BufferGeometry();
+    const positions: number[] = [];
+    const normal: number[] = [];
+    const uv: number[] = [];
+    const p_material = new THREE.PointsMaterial({ color: 0xFFFFFF, size: 1.5 });
 
-    };
+    const loader = new OBJLoader();
+    loader.load('\\assets\\amazon-head.obj', (object) => {
+      object.traverse((child) => {
+        if (child instanceof THREE.Mesh) {
+          const scale = 8;
 
-    Background.headparticle = function () {
-
-      var camera: any
-      var scene: any
-      var renderer: any;
-      var mouseX = 0, mouseY = 0;
-      var p: any;
-
-      var windowHalfX = site.Width / 2;
-      var windowHalfY = site.Height / 2;
-
-      Background.camera = new THREE.PerspectiveCamera(35, site.Width / site.Height, 1, 2000);
-      Background.camera.position.z = 300;
-
-      // scene
-      Background.scene = new THREE.Scene();
-
-      // texture
-      var manager = new THREE.LoadingManager();
-      manager.onProgress = function (item: any, loaded: any, total: any) {
-        //console.log('webgl, twice??');
-        //console.log( item, loaded, total );
-      };
-
-
-      // particles
-      var p_geom = new THREE.Geometry();
-      var p_material = new THREE.ParticleBasicMaterial({
-        color: 0xFFFFFF,
-        size: 1.5
-      });
-
-      // model
-      var loader = new THREE.OBJLoader(manager);
-      loader.load('https://s3-us-west-2.amazonaws.com/s.cdpn.io/40480/head.obj',  (object: any) => {
-
-        object.traverse( (child: any) => {
-
-          if (child instanceof THREE.Mesh) {
-
-            // child.material.map = texture;
-
-            var scale = 8;
-
-            $(child.geometry.vertices).each( () => {
-              p_geom.vertices.push(new THREE.Vector3(this.x * scale, this.y * scale, this.z * scale));
-            })
+          for (let i = 0; i < child.geometry.attributes.position.array.length; i += 3) {
+            const x = child.geometry.attributes.position.array[i] * scale;
+            const y = child.geometry.attributes.position.array[i + 1] * scale;
+            const z = child.geometry.attributes.position.array[i + 2] * scale;
+            positions.push(x, y, z);
           }
-        });
 
-        Background.scene.add(p)
+          for (let k = 0; k < child.geometry.attributes.normal.array.length; k += 3) {
+            const x = child.geometry.attributes.normal.array[k];
+            const y = child.geometry.attributes.normal.array[k + 1];
+            const z = child.geometry.attributes.normal.array[k + 2];
+            normal.push(x, y, z);
+          }
+
+          for (let j = 0; j < child.geometry.attributes.uv.array.length; j += 3) {
+            const x = child.geometry.attributes.normal.array[j];
+            const y = child.geometry.attributes.normal.array[j + 1];
+            const z = child.geometry.attributes.normal.array[j + 2];
+            uv.push(x, y, z);
+          }
+        }
+        //Set the points to the buffer
+        p_geom.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+        p_geom.setAttribute('normal', new THREE.Float32BufferAttribute(normal, 3));
+        p_geom.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2));
+
+        const mesh = new THREE.Points(p_geom, p_material);
+        this.scene.add(mesh);
       });
+    });
+  }
 
-      p = new THREE.ParticleSystem(
-        p_geom,
-        p_material
-      );
+  private initRenderer (): void {
+    this.renderer = new THREE.WebGLRenderer();
+    this.renderer.setSize(window.innerWidth, window.innerHeight);
+    this.renderer.setClearColor(0x000000, 0);
+    this.elementRef.nativeElement.appendChild(this.renderer.domElement);
+  }
 
-      Background.renderer = new THREE.WebGLRenderer({ alpha: true });
-      Background.renderer.setSize(site.Width, site.Height);
-      Background.renderer.setClearColor(0x000000, 0);
+  private onWindowResize (): void {
+    this.windowHalfX = window.innerWidth / 2;
+    this.windowHalfY = window.innerHeight / 2;
+    this.camera.aspect = window.innerWidth / window.innerHeight;
+    this.camera.updateProjectionMatrix();
+    this.renderer.setSize(window.innerWidth, window.innerHeight);
+  }
 
-      $('.particlehead').append(Background.renderer.domElement);
-      $('.particlehead').on('mousemove', onDocumentMouseMove);
-      site.window.on('resize', onWindowResize);
+  private onDocumentMouseMove (event: MouseEvent): void {
+    this.mouseX = (event.clientX - this.windowHalfX) / 2;
+    this.mouseY = (event.clientY - this.windowHalfY) / 2;
+  }
 
-      function onWindowResize () {
-        windowHalfX = site.Width / 2;
-        windowHalfY = site.Height / 2;
-        //console.log(windowHalfX);
+  private animate (): void {
+    requestAnimationFrame(() => this.animate());
+    this.camera.position.x += (-(this.mouseX * 0.5) - this.camera.position.x) * 0.05;
+    this.camera.position.y += ((this.mouseY * 0.5) - this.camera.position.y) * 0.05;
 
-        Background.camera.aspect = site.Width / site.Height;
-        Background.camera.updateProjectionMatrix();
+    this.camera.lookAt(this.scene.position);
 
-        Background.renderer.setSize(site.Width, site.Height);
-      }
-
-      function onDocumentMouseMove (event: any) {
-        mouseX = (event.clientX - windowHalfX) / 2;
-        mouseY = (event.clientY - windowHalfY) / 2;
-      }
-
-      Background.animate = function () {
-
-        Background.ticker = TweenMax.ticker;
-        Background.ticker.addEventListener("tick", Background.animate);
-
-        render();
-      }
-
-      function render () {
-        Background.camera.position.x += ((mouseX * .5) - Background.camera.position.x) * .05;
-        Background.camera.position.y += (-(mouseY * .5) - Background.camera.position.y) * .05;
-
-        Background.camera.lookAt(Background.scene.position);
-
-        Background.renderer.render(Background.scene, Background.camera);
-      }
-
-      render();
-
-      Background.animate();
-    };
-
-
-    Background.headparticle();
-
+    this.renderer.render(this.scene, this.camera);
   }
 }
