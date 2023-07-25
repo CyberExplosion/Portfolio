@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnChanges, SimpleChanges } from '@angular/core';
 import * as THREE from 'three'
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
 
@@ -7,11 +7,13 @@ import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
   templateUrl: './animface-bg.component.html',
   styleUrls: ['./animface-bg.component.css']
 })
-export class AnimfaceBgComponent implements AfterViewInit {
+export class AnimfaceBgComponent implements AfterViewInit, OnChanges {
   constructor(private elementRef: ElementRef) {
     this.windowHalfX = window.innerWidth / 2
     this.windowHalfY = window.innerHeight / 2
   }
+  
+  @Input() mouseCoordinate: { X: number, Y: number } = { X: 0, Y: 0 };
 
   private camera!: THREE.PerspectiveCamera;
   private scene!: THREE.Scene
@@ -20,7 +22,13 @@ export class AnimfaceBgComponent implements AfterViewInit {
   private mouseY = 0
   private windowHalfX: number
   private windowHalfY: number
-
+  
+  
+  ngOnChanges (changes: SimpleChanges): void {
+    if (changes['mouseCoordinate'] && !changes['mouseCoordinate'].firstChange) {
+      this.onMouseMove();
+    }
+  }
 
   ngAfterViewInit (): void {
     this.initCamScene();
@@ -29,11 +37,11 @@ export class AnimfaceBgComponent implements AfterViewInit {
     this.animate();
 
     window.addEventListener('resize', () => this.onWindowResize(), false)
-    this.elementRef.nativeElement.addEventListener('mousemove', (event: MouseEvent) => this.onDocumentMouseMove(event), false)
+    // this.elementRef.nativeElement.addEventListener('mousemove', (event: MouseEvent) => this.onDocumentMouseMove(event), false)
   }
 
   private initCamScene (): void {
-    this.camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 1, 2000);
+    this.camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 2000);
     this.camera.position.z = 300;
     this.scene = new THREE.Scene();
   }
@@ -98,9 +106,14 @@ export class AnimfaceBgComponent implements AfterViewInit {
     this.renderer.setSize(window.innerWidth, window.innerHeight);
   }
 
-  private onDocumentMouseMove (event: MouseEvent): void {
-    this.mouseX = (event.clientX - this.windowHalfX) / 2;
-    this.mouseY = (event.clientY - this.windowHalfY) / 2;
+  // private onDocumentMouseMove (event: MouseEvent): void {
+  //   this.mouseX = (event.clientX - this.windowHalfX) / 2;
+  //   this.mouseY = (event.clientY - this.windowHalfY) / 2;
+  // }
+  private onMouseMove () {
+    this.mouseX = (this.mouseCoordinate.X - this.windowHalfX) / 2;
+    this.mouseY = (this.mouseCoordinate.Y - this.windowHalfY) / 2;
+    console.log("The new mouse X for child: ", this.mouseX);
   }
 
   private animate (): void {

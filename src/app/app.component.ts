@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { IProjectInfo, ProjectInfos } from './my-projects';
 import { TechLogoPath } from './tech-list';
 import { EducationInfos, IEducationInfo } from './my-educations';
@@ -14,18 +14,27 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   
 export class AppComponent implements OnInit {
   constructor(private sanitizer: DomSanitizer){}
-  
+
   title = 'personal-portfolio';
   projectInfos?: IProjectInfo[];
   eduInfos?: IEducationInfo[];
   contactInfos?: IContactInfo[];
   iconHtml?: ICommonIcons = CommonIcons;
-
+  mouseCoordinate: { X: number, Y: number } = { X: 0, Y: 0 };
+  
   techDict = TechLogoPath;
   safeSvgHtml?: { [key: string]: SafeHtml } = {};
-
+  
   transform (svgHtml: string): SafeHtml{
     return this.sanitizer.bypassSecurityTrustHtml(svgHtml);
+  }
+
+  onMouseMove (event: MouseEvent) {
+    this.mouseCoordinate = {
+      X: event.clientX,
+      Y: event.clientY
+    }
+    console.log("mouse position x ", this.mouseCoordinate.X);
   }
 
   ngOnInit(): void {

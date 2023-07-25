@@ -7,9 +7,7 @@
     <title>Profolio</title>
 </head>
 
-<app-animface-bg></app-animface-bg>
-
-<body class="bg-transparent">
+<body (mousemove)="onMouseMove($event)"  class="bg-transparent">
     <section id="title" class="mb-28 mt-3">
         <app-procedural-bg class="absolute -z-10"></app-procedural-bg>
         <app-nav-bar class="text-white"></app-nav-bar>
@@ -62,9 +60,9 @@
         </div>
     </section>
 
-    <p class="text-white">Something should show up here</p>
-    <section class="mt-20 text-white bg-blue-300" id="skills">
+    <section class="mt-20 text-white" id="skills">
         <div data-aos="fade" class="mb-20">
+            <app-animface-bg class="absolute -z-10 overflow-hidden m-0 p-0 w-full h-full bg-black" [mouseCoordinate]="mouseCoordinate"></app-animface-bg>
             <h2 class="mb-16 mx-auto text-center text-2xl font-semibold">Technical <span
                     class="text-blue-500">Skills</span>
             </h2>
