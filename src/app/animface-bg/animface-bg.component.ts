@@ -54,7 +54,7 @@ export class AnimfaceBgComponent implements AfterViewInit, OnChanges {
     const p_material = new THREE.PointsMaterial({ color: 0xFFFFFF, size: 1.5 });
 
     const loader = new OBJLoader();
-    loader.load('\\assets\\amazon-head.obj', (object) => {
+    loader.load('https://s3-us-west-2.amazonaws.com/s.cdpn.io/40480/head.obj', (object) => {
       object.traverse((child) => {
         if (child instanceof THREE.Mesh) {
           const scale = 8;
@@ -106,14 +106,10 @@ export class AnimfaceBgComponent implements AfterViewInit, OnChanges {
     this.renderer.setSize(window.innerWidth, window.innerHeight);
   }
 
-  // private onDocumentMouseMove (event: MouseEvent): void {
-  //   this.mouseX = (event.clientX - this.windowHalfX) / 2;
-  //   this.mouseY = (event.clientY - this.windowHalfY) / 2;
-  // }
   private onMouseMove () {
     this.mouseX = (this.mouseCoordinate.X - this.windowHalfX) / 2;
     this.mouseY = (this.mouseCoordinate.Y - this.windowHalfY) / 2;
-    console.log("The new mouse X for child: ", this.mouseX);
+    // console.log("The new mouse X for child: ", this.mouseX);
   }
 
   private animate (): void {
