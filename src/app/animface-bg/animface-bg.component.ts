@@ -21,6 +21,7 @@ export class AnimfaceBgComponent implements AfterViewInit, OnChanges {
   private camera!: THREE.PerspectiveCamera;
   private scene!: THREE.Scene
   private renderer!: THREE.WebGLRenderer
+  private container!: any
   private mouseX = 0
   private mouseY = 0
   private windowHalfX: number
@@ -38,9 +39,8 @@ export class AnimfaceBgComponent implements AfterViewInit, OnChanges {
     this.initObject();
     this.initRenderer();
     this.animate();
-
+    this.container = this.elementRef.nativeElement;
     window.addEventListener('resize', () => this.onWindowResize(), false)
-    // this.elementRef.nativeElement.addEventListener('mousemove', (event: MouseEvent) => this.onDocumentMouseMove(event), false)
   }
 
   private initCamScene (): void {
@@ -102,11 +102,11 @@ export class AnimfaceBgComponent implements AfterViewInit, OnChanges {
   }
 
   private onWindowResize (): void {
-    this.windowHalfX = window.innerWidth / 2;
-    this.windowHalfY = window.innerHeight / 2;
-    this.camera.aspect = window.innerWidth / window.innerHeight;
+    this.windowHalfX = this.container.offsetWidth / 2;
+    this.windowHalfY = this.container.offsetHeight / 2;
+    this.camera.aspect = this.container.offsetWidth / this.container.offsetHeight;
     this.camera.updateProjectionMatrix();
-    this.renderer.setSize(window.innerWidth, window.innerHeight);
+    this.renderer.setSize(this.container.offsetWidth, this.container.offsetHeight);
   }
 
   private onMouseMove () {
