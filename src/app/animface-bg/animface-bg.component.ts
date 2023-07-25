@@ -1,3 +1,6 @@
+// Animation by Robert Bue: https://codepen.io/robbue/pen/nearyy
+// Adapted and integrated into this project
+
 import { AfterViewInit, Component, ElementRef, Input, OnChanges, SimpleChanges } from '@angular/core';
 import * as THREE from 'three'
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';

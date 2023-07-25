@@ -1,3 +1,6 @@
+// Animation by Marc Tannous: https://codepen.io/marctannous/pen/RNGjmz
+// Adapted and integrated into this project
+
 import { AfterViewInit, Component, ElementRef } from '@angular/core';
 
 declare var THREE: any
