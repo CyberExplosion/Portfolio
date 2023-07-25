@@ -1,6 +1,6 @@
 <div (mousemove)="onMouseMove($event)" class="bg-transparent">
     <section id="title" class="mb-28 mt-3">
-        <app-procedural-bg class="absolute -z-10"></app-procedural-bg>
+        <app-procedural-bg class="hidden lg:block absolute -z-10"></app-procedural-bg>
         <app-nav-bar class="text-white"></app-nav-bar>
         <div class="mx-auto mt-20 text-white text-center max-w-sm md:max-w-3xl">
             <h1 class="viewport-header font-bold">
@@ -16,10 +16,10 @@
             </p>
             <div class="mt-8 flex flex-row justify-center items-stretch">
                 <app-main-button class="mr-2" buttonText="Projects" buttonLink="#projects" [openNewTab]="false">
-                    <div class="w-4 mr-1 svg-mainBtn" [innerHTML]="safeSvgHtml!['lightBulb']"></div>
+                    <div class="w-4 mr-3 svg-mainBtn" [innerHTML]="safeSvgHtml!['lightBulb']"></div>
                 </app-main-button>
                 <app-side-button buttonText="GitHub" buttonLink="https://github.com/CyberExplosion">
-                    <div class="w-4 mr-1 svg-sideBtn" [innerHTML]="safeSvgHtml!['github']"></div>
+                    <div class="w-4 mr-3 svg-sideBtn" [innerHTML]="safeSvgHtml!['github']"></div>
                 </app-side-button>
             </div>
         </div>
@@ -52,7 +52,7 @@
     </section>
 
     <section class="mt-20 text-white" id="skills">
-        <app-animface-bg class="absolute -z-10 overflow-hidden m-0 p-0 w-full h-full bg-black" [mouseCoordinate]="mouseCoordinate"></app-animface-bg>
+        <app-animface-bg class="hidden lg:block absolute -z-10 overflow-hidden m-0 p-0 w-full h-full bg-black" [mouseCoordinate]="mouseCoordinate"></app-animface-bg>
         <div data-aos="fade" class="mb-20">
             <h2 class="mb-16 mx-auto text-center text-2xl font-semibold">Technical <span
                     class="text-blue-500">Skills</span>

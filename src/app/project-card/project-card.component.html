@@ -12,8 +12,13 @@
         </div>
         <p>{{description}}</p>
         <div class="mt-4 flex flex-row align-baseline">
-            <app-main-button class="mr-2" [smallButton]="true" [buttonText]="mainBtnInfo?.text" [buttonLink]="mainBtnInfo?.link"></app-main-button>
-            <app-side-button [smallButton]="true" [buttonText]="sideBtnInfo?.text" [buttonLink]="sideBtnInfo?.link"></app-side-button>
+            <app-main-button class="mr-2 w-24" [smallButton]="true" [buttonText]="mainBtnInfo?.text"
+                [buttonLink]="mainBtnInfo?.link">
+                <div class="svg-mainBtnSmall w-4 mr-2" [innerHTML]="safeSvgIcons![mainBtnInfo!.logo]"></div>
+            </app-main-button>
+            <app-side-button class="w-24" [smallButton]="true" [buttonText]="sideBtnInfo?.text" [buttonLink]="sideBtnInfo?.link">
+                <div class="w-4 mr-2 svg-sideBtn" [innerHTML]="safeSvgIcons![sideBtnInfo!.logo]"></div>
+            </app-side-button>
         </div>
     </div>
 </div>

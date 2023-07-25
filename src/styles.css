@@ -46,6 +46,10 @@
     .svg-mainBtn svg {
         @apply fill-white stroke-white stroke-2
     }
+
+    .svg-mainBtnSmall svg {
+        @apply fill-white
+    }
 }
 
 html{
