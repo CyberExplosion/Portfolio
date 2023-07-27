@@ -37,7 +37,7 @@ export class ProceduralBgComponent implements AfterViewInit {
 
     // play around with camera position
     camera.position.z = 15
-    camera.position.y = 4
+    camera.position.y = 3
 
     // Fog provides depth
     scene.fog = new THREE.Fog(0x000, 0, 45)
@@ -65,8 +65,8 @@ export class ProceduralBgComponent implements AfterViewInit {
 
     // Wireframe scaling
     /* Play around with the scaling */
-    mesh.scale.y = 5.5;
-    mesh.scale.x = 5;
+    mesh.scale.y = 6.5;
+    mesh.scale.x = 6;
     mesh.scale.z = 0.20;
     mesh.scale.multiplyScalar(10);
 
