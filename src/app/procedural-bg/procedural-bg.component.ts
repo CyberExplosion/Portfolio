@@ -37,7 +37,7 @@ export class ProceduralBgComponent implements AfterViewInit {
 
     // play around with camera position
     camera.position.z = 15
-    camera.position.y = 2
+    camera.position.y = 4
 
     // Fog provides depth
     scene.fog = new THREE.Fog(0x000, 0, 45)
@@ -50,7 +50,7 @@ export class ProceduralBgComponent implements AfterViewInit {
     light3.position.set(-0.5, -0.5, -2)
     scene.add(light3)
 
-    const heightMap = THREEx.Terrain.allocateHeightMap(56, 56)
+    const heightMap = THREEx.Terrain.allocateHeightMap(128, 128)
     THREEx.Terrain.simplexHeightMap(heightMap)
     const geometry = THREEx.Terrain.heightMapToPlaneGeometry(heightMap)
     THREEx.Terrain.heightMapToVertexColor(heightMap, geometry)
@@ -65,8 +65,8 @@ export class ProceduralBgComponent implements AfterViewInit {
 
     // Wireframe scaling
     /* Play around with the scaling */
-    mesh.scale.y = 3.5;
-    mesh.scale.x = 3;
+    mesh.scale.y = 5.5;
+    mesh.scale.x = 5;
     mesh.scale.z = 0.20;
     mesh.scale.multiplyScalar(10);
 
