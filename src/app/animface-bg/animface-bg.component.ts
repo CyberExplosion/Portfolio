@@ -12,8 +12,8 @@ import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
 })
 export class AnimfaceBgComponent implements AfterViewInit, OnChanges {
   constructor(private elementRef: ElementRef) {
-    this.windowHalfX = window.innerWidth / 2
-    this.windowHalfY = window.innerHeight / 2
+    this.windowHalfX = window.innerWidth / 2;
+    this.windowHalfY = window.innerHeight / 2;
   }
   
   @Input() mouseCoordinate: { X: number, Y: number } = { X: 0, Y: 0 };
@@ -35,16 +35,16 @@ export class AnimfaceBgComponent implements AfterViewInit, OnChanges {
   }
 
   ngAfterViewInit (): void {
+    this.container = this.elementRef.nativeElement;
     this.initCamScene();
     this.initObject();
     this.initRenderer();
     this.animate();
-    this.container = this.elementRef.nativeElement;
     window.addEventListener('resize', () => this.onWindowResize(), false)
   }
 
   private initCamScene (): void {
-    this.camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 2000);
+    this.camera = new THREE.PerspectiveCamera(50, this.container.offsetWidth / this.container.offsetHeight, 0.1, 2000);
     this.camera.position.z = 300;
     this.scene = new THREE.Scene();
   }
@@ -96,7 +96,7 @@ export class AnimfaceBgComponent implements AfterViewInit, OnChanges {
 
   private initRenderer (): void {
     this.renderer = new THREE.WebGLRenderer();
-    this.renderer.setSize(window.innerWidth, window.innerHeight);
+    this.renderer.setSize(this.container.offsetWidth, this.container.offsetHeight);
     this.renderer.setClearColor(0x000000, 0);
     this.elementRef.nativeElement.appendChild(this.renderer.domElement);
   }

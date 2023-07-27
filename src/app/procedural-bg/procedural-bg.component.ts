@@ -25,14 +25,15 @@ export class ProceduralBgComponent implements AfterViewInit {
       antialias: true
     })
     // Full screen
-    renderer.setSize(window.innerWidth, window.innerHeight)
+    renderer.setSize(container.offsetWidth, container.offsetHeight)
+    console.log('The width', container.offsetWidth);
 
     // Append to html
     container.appendChild(renderer.domElement)
 
     const onRenderFcts: ((delta: number, now: number) => void)[] = []
     const scene = new THREE.Scene()
-    const camera = new THREE.PerspectiveCamera(25, window.innerWidth / window.innerHeight, 0.01, 1000)
+    const camera = new THREE.PerspectiveCamera(25, container.offsetWidth / container.offsetHeight, 0.01, 1000)
 
     // play around with camera position
     camera.position.z = 15
