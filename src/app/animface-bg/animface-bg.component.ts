@@ -12,8 +12,9 @@ import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
 })
 export class AnimfaceBgComponent implements AfterViewInit, OnChanges {
   constructor(private elementRef: ElementRef) {
-    this.windowHalfX = window.innerWidth / 2;
-    this.windowHalfY = window.innerHeight / 2;
+
+    this.windowHalfX = elementRef.nativeElement.offsetWidth / 2;
+    this.windowHalfY = elementRef.nativeElement.offsetHeight / 2;
   }
   
   @Input() mouseCoordinate: { X: number, Y: number } = { X: 0, Y: 0 };
@@ -40,7 +41,7 @@ export class AnimfaceBgComponent implements AfterViewInit, OnChanges {
     this.initObject();
     this.initRenderer();
     this.animate();
-    window.addEventListener('resize', () => this.onWindowResize(), false)
+    window.addEventListener("resize", () => this.onWindowResize(), false)
   }
 
   private initCamScene (): void {
