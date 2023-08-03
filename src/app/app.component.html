@@ -1,7 +1,7 @@
 <div (mousemove)="onMouseMove($event)" class="bg-transparent">
     <section id="title" class="relative pb-52">
-        <app-nav-bar class="text-white"></app-nav-bar>
-        <div class="mx-auto mt-20 text-white text-center max-w-sm md:max-w-3xl">
+        <app-nav-bar class="text-white" data-aos="fade-in"></app-nav-bar>
+        <div class="mx-auto mt-20 text-white text-center max-w-sm md:max-w-3xl" data-aos="fade-up">
             <h1 class="viewport-header font-bold">
                 Hi, I'm <span class="text-blue-500">Khoi</span>
             </h1>
@@ -22,14 +22,14 @@
                 </app-side-button>
             </div>
         </div>
-        <app-procedural-bg class="m-0 p-0 w-full h-full absolute -bottom-20 -z-10"></app-procedural-bg>
+        <app-procedural-bg class="m-0 p-0 w-full h-full absolute -bottom-20 -z-10" data-aos="fade-in"></app-procedural-bg>
         <div class="w-full absolute -bottom-1 bg-transparent">
             <svg class="fill-white" viewBox="0 0 2560 100">
                 <polygon points="2560,0 2560,200 -100,100"></polygon>
             </svg>
         </div>
     </section>
-    <app-social-sidebar class="hidden lg:flex lg:flex-col lg:absolute lg:top-44 lg:-left-36"></app-social-sidebar>
+    <app-social-sidebar class="hidden lg:flex lg:flex-col lg:absolute lg:top-44 lg:-left-36" data-aos="fade-in"></app-social-sidebar>
 
     <section id="projects" class="bg-white relative pb-56">
         <h2 class="mx-auto mb-16 pt-16 text-center text-2xl font-semibold">My <span

@@ -45,7 +45,7 @@ export const ProjectInfos = [
         imgPath: 'assets\\projects\\newsapp.png',
         title: 'UN News Feed Phone App',
         techList: ['Flutter', 'Android Studio', 'Firebase', 'SQLite'],
-        description: "Android News Feed App that utilizes the United Nations RSS to the latest news with a friendly design. Allowed users to easily browse and read top headlines using Google's Material Design. Designed widgets and layouts in Android Studio. The app is cross-platforms using a single codebase through Flutter. Handled user authentication using Google Firebase and allowed users to save their favorite articles into local memory through SQLite.",
+        description: "Android News Feed App that utilizes the United Nations RSS to deliver the latest news with a friendly design. Allowed users to easily browse and read top headlines using Google's Material Design. Designed widgets and layouts in Android Studio. The app is cross-platform using a single codebase through Flutter. Handled user authentication using Firebase Authentication and allowed users to save their favorite articles into the device's local memory through SQLite relational database.",
         mainButton: {
             logo: "play",
             text: "Demo",
