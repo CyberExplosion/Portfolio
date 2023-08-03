@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { TechLogoPath } from '../tech-list';
 import { INavAnchor } from '../nav-configs';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
@@ -11,7 +11,7 @@ import { CommonIcons, ICommonIcons } from '../my-commonIcons';
 })
 
 export class ProjectCardComponent implements OnInit {
-  constructor(private sanitizer: DomSanitizer) { }
+  constructor(private sanitizer: DomSanitizer, private elementRef: ElementRef) { }
 
   techLogoPath = TechLogoPath;
   isInViewport = false;
@@ -30,6 +30,9 @@ export class ProjectCardComponent implements OnInit {
   safeSvgIcons: {[key: string]: SafeHtml} = {}
   commonIconDict: ICommonIcons = CommonIcons;
 
+  @ViewChild('scrollableContent', { static: true }) scrollableContentRef!: ElementRef;
+  @ViewChild('imageContent', { static: true }) imageContentRef!: ElementRef;
+
   transform (html: string): SafeHtml {
     return this.sanitizer.bypassSecurityTrustHtml(html);
   }
@@ -41,5 +44,12 @@ export class ProjectCardComponent implements OnInit {
         this.safeSvgIcons![key] = this.transform(element);
       }
     }
+  }
+
+  needScrollBar (): boolean {
+    if (this.imageContentRef.nativeElement.scrollHeight > this.scrollableContentRef.nativeElement.clientHeight) {
+      return true;
+    }
+    return false;
   }
 }

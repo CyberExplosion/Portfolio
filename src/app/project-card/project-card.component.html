@@ -1,5 +1,8 @@
 <div class="flex flex-col justify-center md:flex md:flex-row md:justify-around md:items-center">
-    <img class="md:mr-10 md:w-0 md:flex-1" [src]="imgPath">
+    <div #scrollableContent class="md:mr-10 md:flex-1 max-h-96" [ngClass]="{'overflow-y-scroll': needScrollBar()}">
+        <img #imageContent class="w-full h-auto" [src]="imgPath">
+    </div>
+    <!-- <img class="md:mr-10 md:w-0 md:flex-1 max-h-96 overflow-y-scroll" [src]="imgPath"> -->
     <div class="md:flex-1">
         <h3 class="my-1 font-semibold text-xl">{{title}}</h3>
         <div class="my-3 flex flex-row justify-start">

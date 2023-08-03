@@ -33,12 +33,28 @@ export const ProjectInfos = [
         mainButton: {
             logo: "link",
             text: "Live",
-            link: "https://website-ecs-177-online-studying.vercel.app/"
+            link: "https://website-ecs-177-online-studying.vercel.app"
         },
         sideButton: {
             logo: "github",
             text: "Code",
             link: "https://github.com/ECS-171-Divorce-Team"
+        }
+    },
+    {
+        imgPath: 'assets\\projects\\newsapp.png',
+        title: 'UN News Feed Phone App',
+        techList: ['Flutter', 'Android Studio', 'Firebase', 'SQLite'],
+        description: "Android News Feed App that utilizes the United Nations RSS to the latest news with a friendly design. Allowed users to easily browse and read top headlines using Google's Material Design. Designed widgets and layouts in Android Studio. The app is cross-platforms using a single codebase through Flutter. Handled user authentication using Google Firebase and allowed users to save their favorite articles into local memory through SQLite.",
+        mainButton: {
+            logo: "play",
+            text: "Demo",
+            link: "https://youtu.be/Gzej8hVNrD4"
+        },
+        sideButton: {
+            logo: "github",
+            text: "Code",
+            link: "https://github.com/CyberExplosion/NewsFeed-ECS198F"
         }
     },
 ]
