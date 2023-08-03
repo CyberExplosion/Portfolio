@@ -28,7 +28,10 @@
               "src/styles.css",
               "node_modules/aos/dist/aos.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/minthree.js",
+              "src/threex.terrain.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -90,7 +93,10 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/minthree.js",
+              "src/threex.terrain.js"
+            ]
           }
         },
         "deploy": {
@@ -98,6 +104,10 @@
           "options": {
             "styles": [
               "node_modules/aos/dist/aos.css"
+            ],
+            "scripts": [
+              "src/minthree.js",
+              "src/threex.terrain.js"
             ]
           }
         }

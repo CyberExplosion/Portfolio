@@ -34,7 +34,6 @@ export class AppComponent implements OnInit {
       X: event.clientX,
       Y: event.clientY
     }
-    console.log("mouse position x ", this.mouseCoordinate.X);
   }
 
   ngOnInit(): void {

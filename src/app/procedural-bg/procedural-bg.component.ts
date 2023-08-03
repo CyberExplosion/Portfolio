@@ -2,7 +2,8 @@
 // Adapted and integrated into this project
 
 import { AfterViewInit, Component, ElementRef } from '@angular/core';
-
+// import THREEx from 'src/threex.terrain';
+// import { Vector3 } from 'three';
 declare var THREE: any
 declare var THREEx: any
 
@@ -15,18 +16,28 @@ export class ProceduralBgComponent implements AfterViewInit {
   constructor(private elementRef: ElementRef) { }
 
   ngAfterViewInit (): void {
-    this.initializeTerrain()
+    if (typeof THREEx !== 'undefined') {
+      console.log('The threex library is working fine, the type is ', typeof THREEx)
+      if (typeof THREE.Vector3 !== 'undefined') {
+        console.log('YEST PLSSS')
+      } else {
+        console.log('BRUHHHHHHHHHHH')
+      }
+      this.initializeTerrain()
+    }
+    else {
+      console.error("The THREEx library was not defined")
+    }
   }
 
   private initializeTerrain (): void {
     const container = this.elementRef.nativeElement
-
     const renderer = new THREE.WebGLRenderer({
       antialias: true
     })
     // Full screen
     renderer.setSize(container.offsetWidth, container.offsetHeight)
-    console.log('The width', container.offsetWidth);
+    // console.log('The width', container.offsetWidth);
 
     // Append to html
     container.appendChild(renderer.domElement)
