@@ -29,8 +29,6 @@
               "node_modules/aos/dist/aos.css"
             ],
             "scripts": [
-              "src/minthree.js",
-              "src/threex.terrain.js"
             ]
           },
           "configurations": {
@@ -94,8 +92,6 @@
               "src/styles.css"
             ],
             "scripts": [
-              "src/minthree.js",
-              "src/threex.terrain.js"
             ]
           }
         },
@@ -106,8 +102,6 @@
               "node_modules/aos/dist/aos.css"
             ],
             "scripts": [
-              "src/minthree.js",
-              "src/threex.terrain.js"
             ]
           }
         }

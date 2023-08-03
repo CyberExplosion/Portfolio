@@ -2,8 +2,7 @@
 // Adapted and integrated into this project
 
 import { AfterViewInit, Component, ElementRef } from '@angular/core';
-// import THREEx from 'src/threex.terrain';
-// import { Vector3 } from 'three';
+
 declare var THREE: any
 declare var THREEx: any
 
