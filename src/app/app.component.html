@@ -36,7 +36,7 @@
                 class="text-blue-500">Projects</span>
         </h2>
         <ul class="mx-6" *ngIf="projectInfos">
-            <li data-aos="fade-up" class="mb-16 last-of-type:mb-0 mx-auto max-w-6xl"
+            <li data-aos="fade-up" class="mb-20 first-of-type:mt-16 last-of-type:mb-0 mx-auto max-w-6xl"
                 *ngFor="let projectItem of projectInfos">
                 <app-project-card [imgPath]="projectItem.imgPath" [title]="projectItem.title"
                     [techList]="projectItem.techList" [description]="projectItem.description"
