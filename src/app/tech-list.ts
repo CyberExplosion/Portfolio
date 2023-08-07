@@ -19,4 +19,5 @@ export const TechLogoPath : ITechLogoPath = {
     "Firebase": "assets\\techIcons\\firebase.svg",
     "Android Studio": "assets\\techIcons\\androidstudio.svg",
     "SQLite": "assets\\techIcons\\sqlite.svg",
+    "Figma": "assets\\techIcons\\figma.svg",
 }
