@@ -17,7 +17,8 @@ import { FooterNavComponent } from './footer-nav/footer-nav.component';
 import { ScrollTopBtnComponent } from './scroll-top-btn/scroll-top-btn.component';
 import { ProceduralBgComponent } from './procedural-bg/procedural-bg.component';
 import { AnimfaceBgComponent } from './animface-bg/animface-bg.component';
-
+import { ParticlesBgComponent } from './particles-bg/particles-bg.component';
+import {NgParticlesModule} from 'ng-particles'
 
 @NgModule({
   declarations: [
@@ -36,10 +37,12 @@ import { AnimfaceBgComponent } from './animface-bg/animface-bg.component';
     ScrollTopBtnComponent,
     ProceduralBgComponent,
     AnimfaceBgComponent,
+    ParticlesBgComponent,
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgParticlesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
