@@ -22,14 +22,16 @@
                 </app-side-button>
             </div>
         </div>
-        <app-procedural-bg class="m-0 p-0 w-full h-full absolute -bottom-20 -z-10" data-aos="fade-in"></app-procedural-bg>
+        <app-procedural-bg class="m-0 p-0 w-full h-full absolute -bottom-20 -z-10"
+            data-aos="fade-in"></app-procedural-bg>
         <div class="w-full absolute -bottom-1 bg-transparent">
             <svg class="fill-white" viewBox="0 0 2560 100">
                 <polygon points="2560,0 2560,200 -100,100"></polygon>
             </svg>
         </div>
     </section>
-    <app-social-sidebar class="hidden lg:flex lg:flex-col lg:absolute lg:top-44 lg:-left-36" data-aos="fade-in"></app-social-sidebar>
+    <app-social-sidebar class="hidden lg:flex lg:flex-col lg:absolute lg:top-44 lg:-left-36"
+        data-aos="fade-in"></app-social-sidebar>
 
     <section id="projects" class="bg-white relative pb-56">
         <h2 class="mx-auto mb-16 pt-16 text-center text-2xl font-semibold">My <span
@@ -51,18 +53,21 @@
     </section>
 
     <section class="mt-20 text-white relative pb-32" id="skills">
-        <div data-aos="fade" class="mb-20">
-            <h2 class="mb-16 mx-auto text-center text-2xl font-semibold">Technical <span
-                    class="text-blue-500">Skills</span>
-            </h2>
-            <ul class="flex flex-row flex-wrap justify-center items-center max-w-md md:max-w-5xl mx-auto">
-                <li class="w-24 mb-10 mx-5 transition hover:scale-125 duration-300"
-                    *ngFor="let techs of techDict | keyvalue">
-                    <app-skill-logo [techName]="techs.key"></app-skill-logo>
-                </li>
-            </ul>
-            <app-animface-bg class="hidden md:block top-0 absolute -z-10 m-0 p-0 w-full h-full mx-auto"
-                [mouseCoordinate]="mouseCoordinate"></app-animface-bg>
+        <div>
+            <div data-aos="fade" class="mb-20">
+                <h2 class="mb-16 mx-auto text-center text-2xl font-semibold">Technical <span
+                        class="text-blue-500">Skills</span>
+                </h2>
+                <ul class="flex flex-row flex-wrap justify-center items-center max-w-md md:max-w-5xl mx-auto">
+                    <li class="w-24 mb-10 mx-5 transition hover:scale-125 duration-300"
+                        *ngFor="let techs of techDict | keyvalue">
+                        <app-skill-logo [techName]="techs.key"></app-skill-logo>
+                    </li>
+                </ul>
+                <!-- <app-animface-bg class="hidden md:block top-0 absolute -z-10 m-0 p-0 w-full h-full mx-auto"
+                [mouseCoordinate]="mouseCoordinate"></app-animface-bg> -->
+            </div>
+            <app-particles-bg class="top-0 absolute -z-10 m-0 p-0"></app-particles-bg>
         </div>
         <div class="w-full absolute -bottom-1">
             <svg class="fill-white" viewBox="0 0 2560 100">
@@ -93,8 +98,7 @@
             </li>
         </ul>
     </section>
-    
-    <app-particles-bg></app-particles-bg>
+
 
     <app-scroll-top-btn data-aos="fade" data-aos-anchor="#projects" data-aos-anchor-placement="top-top"
         class="fixed bottom-5 right-5 z-10"></app-scroll-top-btn>
