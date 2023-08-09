@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
 import { NgParticlesComponent } from 'ng-particles';
 import {
-  Background,
-  BackgroundMaskCover,
   ClickMode,
   Engine,
   HoverMode,
 } from 'tsparticles-engine';
-import type { ISourceOptions } from "tsparticles-engine";
+import type { IModes, ISourceOptions } from "tsparticles-engine";
 import { loadLinksPreset } from 'tsparticles-preset-links';
 @Component({
   selector: 'app-particles-bg',
@@ -15,33 +13,55 @@ import { loadLinksPreset } from 'tsparticles-preset-links';
   styleUrls: ['./particles-bg.component.css']
 })
 
-  
+
 // Triangle options: https://github.com/tsparticles/presets/blob/main/presets/triangles/src/options.ts
 export class ParticlesBgComponent {
   particlesOptions: ISourceOptions = {
     fullScreen: false,
+    background: {
+      color: "#000000",
+    },
     particles: {
-      color: {
-        value: "#ffffff",
+      number: {
+        value: 100,
       },
-      // number: {
-      //   value: 50
-      // }
+      links: {
+        distance: 125,
+        enable: true,
+        triangles: {
+          enable: true,
+          opacity: 0.1,
+        },
+      },
+      move: {
+        enable: true,
+        speed: 2,
+      },
+      size: {
+        value: 1,
+      },
+      shape: {
+        type: "circle",
+      },
     },
     interactivity: {
-      // events: {
-      //   onClick: {
-      //     enable: true,
-      //     mode: ClickMode.push
-      //   },
-      //   onHover: {
-      //     enable: true,
-      //     mode: HoverMode.repulse
-      //   }
-      // }
-    },
-    fpsLimit: 120,
-    preset: "links",
+      detectsOn: "window",
+      events: {
+        onHover: {
+          enable: true,
+          mode: HoverMode.repulse
+        }
+      },
+      modes: {
+        push: {
+          quantity: 4,
+        },
+        repulse: {
+          distance: 200,
+          duration: 0.4,
+        },
+      },
+    }
   };
 
   particlesInit = async (engine: Engine): Promise<void> => {
