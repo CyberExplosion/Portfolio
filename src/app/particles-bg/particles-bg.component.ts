@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
 import { NgParticlesComponent } from 'ng-particles';
 import {
+  Background,
+  BackgroundMaskCover,
+  ClickMode,
   Engine,
+  HoverMode,
 } from 'tsparticles-engine';
 import type { ISourceOptions } from "tsparticles-engine";
 import { loadLinksPreset } from 'tsparticles-preset-links';
@@ -15,20 +19,26 @@ import { loadLinksPreset } from 'tsparticles-preset-links';
 // Triangle options: https://github.com/tsparticles/presets/blob/main/presets/triangles/src/options.ts
 export class ParticlesBgComponent {
   particlesOptions: ISourceOptions = {
-    backgroundMode: ,
+    fullScreen: false,
     particles: {
-    },
-    shape: {
-      type: "square", // starting from v2, this require the square shape script
+      color: {
+        value: "#ffffff",
+      },
+      // number: {
+      //   value: 50
+      // }
     },
     interactivity: {
-      events: {
-        onClick: {
-          detectsOn: "window",
-          enable: true,
-          mode: "grab"
-        }
-      }
+      // events: {
+      //   onClick: {
+      //     enable: true,
+      //     mode: ClickMode.push
+      //   },
+      //   onHover: {
+      //     enable: true,
+      //     mode: HoverMode.repulse
+      //   }
+      // }
     },
     fpsLimit: 120,
     preset: "links",
