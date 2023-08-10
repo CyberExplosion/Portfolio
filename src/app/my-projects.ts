@@ -73,4 +73,20 @@ export const ProjectInfos = [
             link: "https://github.com/CyberExplosion/Nut_App"
         }
     },
+    {
+        imgPath: 'assets\\projects\\nvsi.png',
+        title: 'UC Davis New Viet Nam Studies Initiative Website',
+        techList: ['NextJS', 'React', 'Figma'],
+        description: "Android Nutrition App that helps the user keeps track of their nutrition intake every day and builds a personal diet. Designed and prototyped on Figma, the application uses Firebase Authentication to handle user credentials. Developed on Flutter to support devices on multiple platforms. Supported social authentication through Google Sign-In and Facebook Sign-In to improve customer experience.",
+        mainButton: {
+            logo: "link",
+            text: "Live",
+            link: "https://newvietnam.ucdavis.edu/"    
+        },
+        sideButton: {
+            logo: "github",
+            text: "Code",
+            link: "https://github.com/include-davis/nvsi"
+        }
+    },
 ]

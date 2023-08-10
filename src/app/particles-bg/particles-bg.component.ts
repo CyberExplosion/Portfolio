@@ -44,24 +44,7 @@ export class ParticlesBgComponent {
         type: "circle",
       },
     },
-    interactivity: {
-      detectsOn: "window",
-      events: {
-        onHover: {
-          enable: true,
-          mode: HoverMode.repulse
-        }
-      },
-      modes: {
-        push: {
-          quantity: 4,
-        },
-        repulse: {
-          distance: 200,
-          duration: 0.4,
-        },
-      },
-    }
+    fpsLimit: 120,
   };
 
   particlesInit = async (engine: Engine): Promise<void> => {
