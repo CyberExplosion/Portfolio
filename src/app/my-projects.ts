@@ -77,7 +77,7 @@ export const ProjectInfos = [
         imgPath: 'assets\\projects\\nvsi.png',
         title: 'UC Davis New Viet Nam Studies Initiative Website',
         techList: ['NextJS', 'React', 'Figma'],
-        description: "Android Nutrition App that helps the user keeps track of their nutrition intake every day and builds a personal diet. Designed and prototyped on Figma, the application uses Firebase Authentication to handle user credentials. Developed on Flutter to support devices on multiple platforms. Supported social authentication through Google Sign-In and Facebook Sign-In to improve customer experience.",
+        description: `The main website for the UC Davis NVSI. Built using the Next.js web framework for its static web pages, the project is a collaboration with the student organization \"#include @Davis.\" Mainly worked on the Home and Community page for the site. Designed on Figma, the project aimed to provide the NVSI organization with a modern website, that is easy to navigate and attract more users to learn about the initiative.`,
         mainButton: {
             logo: "link",
             text: "Live",
