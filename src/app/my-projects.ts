@@ -42,6 +42,22 @@ export const ProjectInfos = [
         }
     },
     {
+        imgPath: 'assets\\projects\\deeplearning.png',
+        title: 'Deep Learning Experiments',
+        techList: ['Python', 'Jupyter', 'AWS', 'PyTorch', 'Tensorflow'],
+        description: "Learned about the basic principle of designing and implementing a deep learning model for specific applications. Understood in depth how to train, optimize, and tune deep learning models such as CNN, RNN, and GNN with real-world data, images, text, graphs, etc. Practiced with industry-standard tools for researching and modeling deep learning with PyTorch and TensorFlow. Trained model using GPU with AWS EC2 instances.",
+        mainButton: {
+            logo: "link",
+            text: "Live",
+            link: "https://cyberexplosion.github.io/deep-learning-doc/"
+        },
+        sideButton: {
+            logo: "github",
+            text: "Code",
+            link: "https://github.com/CyberExplosion/Deep-Learning-Projects"
+        }
+    },
+    {
         imgPath: 'assets\\projects\\newsapp.png',
         title: 'UN News Feed Phone App',
         techList: ['Flutter', 'Android Studio', 'Firebase', 'SQLite'],

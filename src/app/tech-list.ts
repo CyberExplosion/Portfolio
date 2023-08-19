@@ -5,7 +5,7 @@ export interface ITechLogoPath {
 }
 
 export const TechLogoPath : ITechLogoPath = {
-    "Amazon": "assets\\techIcons\\aws.svg",
+    "AWS": "assets\\techIcons\\aws.svg",
     "TypeScript": "assets\\techIcons\\typescript.svg",
     "React": "assets\\techIcons\\react.svg",
     "Bootstrap": "assets\\techIcons\\bootstrap.svg",
@@ -21,4 +21,7 @@ export const TechLogoPath : ITechLogoPath = {
     "SQLite": "assets\\techIcons\\sqlite.svg",
     "Figma": "assets\\techIcons\\figma.svg",
     "NextJS": "assets\\techIcons\\nextjs.svg",
+    "PyTorch": "assets\\techIcons\\pytorch.svg",
+    "Tensorflow": "assets\\techIcons\\tensorflow.svg",
+    "Tailwind": "assets\\techIcons\\tailwindcss.svg",
 }
