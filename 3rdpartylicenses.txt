@@ -336,7 +336,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-tsparticles-interaction-particles-links
+tsparticles-interaction-external-trail
 MIT
 MIT License
 
@@ -386,7 +386,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-tsparticles-preset-links
+tsparticles-preset-firefly
 MIT
 MIT License
 
