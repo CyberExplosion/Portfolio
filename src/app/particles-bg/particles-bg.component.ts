@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
-import { NgParticlesComponent } from 'ng-particles';
 import {
-  ClickMode,
-  Engine,
-  HoverMode,
+  Engine, HoverMode, MoveDirection, OutMode,
 } from 'tsparticles-engine';
-import type { IModes, ISourceOptions } from "tsparticles-engine";
-import { loadLinksPreset } from 'tsparticles-preset-links';
+import type { ISourceOptions } from "tsparticles-engine";
+import { loadFireflyPreset } from 'tsparticles-preset-firefly';
 @Component({
   selector: 'app-particles-bg',
   templateUrl: './particles-bg.component.html',
@@ -17,39 +14,14 @@ import { loadLinksPreset } from 'tsparticles-preset-links';
 // Triangle options: https://github.com/tsparticles/presets/blob/main/presets/triangles/src/options.ts
 export class ParticlesBgComponent {
   particlesOptions: ISourceOptions = {
+    preset: "firefly",
     fullScreen: false,
-    background: {
-      color: "#000000",
-    },
-    particles: {
-      number: {
-        value: 100,
-      },
-      links: {
-        distance: 125,
-        enable: true,
-        triangles: {
-          enable: true,
-          opacity: 0.1,
-        },
-      },
-      move: {
-        enable: true,
-        speed: 2,
-      },
-      size: {
-        value: 1,
-      },
-      shape: {
-        type: "circle",
-      },
-    },
     fpsLimit: 120,
   };
 
   particlesInit = async (engine: Engine): Promise<void> => {
     console.log(engine);
 
-    await loadLinksPreset(engine);
+    await loadFireflyPreset(engine);
   }
 }
