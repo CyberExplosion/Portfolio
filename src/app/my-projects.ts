@@ -4,11 +4,22 @@ export interface IProjectInfo {
     title: String;
     techList: string[];
     description: String;
-    mainButton: INavAnchor;
-    sideButton: INavAnchor;
+    mainButton?: INavAnchor;
+    sideButton?: INavAnchor;
 }
 
 export const ProjectInfos = [
+    {
+        imgPath: 'assets\\projects\\map.png',
+        title: 'Vector Collection Sites Interactive Map',
+        techList: ['NextJS', 'React', 'Redux', 'SWR', 'TypeScript', 'DaisyUI', 'NodeJS', 'Miro'],
+        description: "Developed a cross-platform interactive mapping system to display malaria vector collection sites over the islands of Principe and Sao Tome for UC Davis Vector Genetics Laboratory. Used NextJS as a full-stack framework, created a web application for data collection, and map visualization by 100 percent. Conveyed design ideas and accelerated clients' interaction through Miro's collaboration board. Utilized flux pattern with Redux to handle inter-component communications and site updates. Leveraged React SWR to manage data fetching and caching from back-end services. Implemented a NodeJS REST API with NextJS API route to handle data sanitization and front-end requests, allowing serverless integration in the future. Programed using TypeScript for automatic feedback and enforcing type safety.",
+        mainButton: {
+            logo: "link",
+            text: "Lab",
+            link: "https://vectorgeneticslab.ucdavis.edu/"
+        }
+    },
     {
         imgPath: 'assets\\projects\\fallKing.png',
         title: 'Fall King',
@@ -28,7 +39,7 @@ export const ProjectInfos = [
     {
         imgPath: 'assets\\projects\\onlinestudy.png',
         title: 'Online Education Satisfaction Prediction',
-        techList: ['Python', 'Jupyter', 'React', 'Bootstrap', 'TypeScript', 'Cloud Run' ,'Docker', 'Express'],
+        techList: ['Python', 'Jupyter', 'React', 'Bootstrap', 'TypeScript', 'Cloud Run', 'Docker', 'Express'],
         description: "Researched students' online learning experience during COVID using different machine learning techniques such as linear regression, support vector machine, neural network, etc. Collaborated on Jupyter Notebook, and utilized Python ML libraries like NumPy, Pandas, and Tensorflow to build models and predict student satisfaction. Presented results and findings on a website built using React with Bootstrap to accelerate front-end development. Dockerized the back-end Node.js REST API built using TypeScript and Express. Deployed the API container to Google Cloud Run to take advantage of automatic scaling and serverless computing.",
         mainButton: {
             logo: "link",
@@ -81,7 +92,7 @@ export const ProjectInfos = [
         mainButton: {
             logo: "play",
             text: "Demo",
-            link: "https://youtu.be/kFJVLyA1P3Q"    
+            link: "https://youtu.be/kFJVLyA1P3Q"
         },
         sideButton: {
             logo: "github",
@@ -97,7 +108,7 @@ export const ProjectInfos = [
         mainButton: {
             logo: "link",
             text: "Live",
-            link: "https://newvietnam.ucdavis.edu/"    
+            link: "https://newvietnam.ucdavis.edu/"
         },
         sideButton: {
             logo: "github",

@@ -24,4 +24,9 @@ export const TechLogoPath : ITechLogoPath = {
     "PyTorch": "assets\\techIcons\\pytorch.svg",
     "Tensorflow": "assets\\techIcons\\tensorflow.svg",
     "Tailwind": "assets\\techIcons\\tailwindcss.svg",
+    "SWR": "assets\\techIcons\\swr.svg",
+    "DaisyUI": "assets\\techIcons\\daisyui.svg",
+    "NodeJS": "assets\\techIcons\\nodejs.svg",
+    "Redux": "assets\\techIcons\\redux.svg",
+    "Miro": "assets\\techIcons\\miro.svg",
 }
