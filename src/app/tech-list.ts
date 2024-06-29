@@ -4,7 +4,10 @@ export interface ITechLogoPath {
     [key: string]: string;
 }
 
-export const TechLogoPath : ITechLogoPath = {
+export const TechLogoPath: ITechLogoPath = {
+    "Postman": "assets\\techIcons\\postman.svg",
+    "MongoDB": "assets\\techIcons\\mongodb.svg",
+    "Sentry": "assets\\techIcons\\sentry.svg",
     "AWS": "assets\\techIcons\\aws.svg",
     "TypeScript": "assets\\techIcons\\typescript.svg",
     "React": "assets\\techIcons\\react.svg",
