@@ -1,7 +1,8 @@
 <div class="bg-transparent">
     <section id="title" class="relative pb-52">
-        <app-nav-bar class="text-white" data-aos="fade-in"></app-nav-bar>
-        <div class="mx-auto mt-20 text-white text-center max-w-sm md:max-w-3xl" data-aos="fade-up">
+        <app-nav-bar class="text-white" pAnimateOnScroll enterClass="fadein"></app-nav-bar>
+        <div class="mx-auto mt-20 text-white text-center max-w-sm duration-500 md:max-w-3xl" pAnimateOnScroll
+            enterClass="fadein" leaveClass="fadeout">
             <h1 class="viewport-header font-bold">
                 Hi, I'm <span class="text-blue-500">Khoi</span>
             </h1>
@@ -23,24 +24,24 @@
                 </app-side-button>
             </div>
         </div>
-        <app-procedural-bg class="m-0 p-0 w-full h-full absolute -bottom-20 -z-10"
-            data-aos="fade-in"></app-procedural-bg>
+        <app-procedural-bg class="m-0 p-0 w-full h-full absolute -bottom-20 -z-10 duration-500" pAnimateOnScroll
+            enterClass="fadein"></app-procedural-bg>
         <div class="w-full absolute -bottom-1 bg-transparent">
             <svg class="fill-white" viewBox="0 0 2560 100">
                 <polygon points="2560,0 2560,200 -100,100"></polygon>
             </svg>
         </div>
     </section>
-    <app-social-sidebar class="hidden lg:flex lg:flex-col lg:absolute lg:top-44 lg:-left-36"
-        data-aos="fade-in"></app-social-sidebar>
+    <app-social-sidebar class="hidden duration-500 lg:flex lg:flex-col lg:absolute lg:top-44 lg:-left-36"
+        pAnimateOnScroll enterClass="fadein"></app-social-sidebar>
 
     <section id="projects" class="bg-white relative pb-56">
         <h2 class="mx-auto mb-16 pt-16 text-center text-2xl font-semibold">My <span
                 class="text-blue-500">Projects</span>
         </h2>
         <ul class="mx-6" *ngIf="projectInfos">
-            <li data-aos="fade-up" class="mb-20 first-of-type:mt-16 last-of-type:mb-0 mx-auto max-w-6xl"
-                *ngFor="let projectItem of projectInfos">
+            <li class="mb-20 duration-500 first-of-type:mt-16 last-of-type:mb-0 mx-auto max-w-6xl" pAnimateOnScroll
+                enterClass="zoomin" *ngFor="let projectItem of projectInfos">
                 <app-project-card [imgPath]="projectItem.imgPath" [title]="projectItem.title"
                     [techList]="projectItem.techList" [description]="projectItem.description"
                     [mainBtnInfo]="projectItem.mainButton" [sideBtnInfo]="projectItem.sideButton"></app-project-card>
@@ -54,14 +55,17 @@
     </section>
 
     <section class="mt-20 text-white relative pb-20" id="skills">
-        <div data-aos="fade">
+        <div pAnimateOnScroll enterClass="fadein" leaveClass="fadeout">
             <h2 class="mb-16 mx-auto text-center text-2xl font-semibold">Technical <span
                     class="text-blue-500">Skills</span>
             </h2>
             <ul class="flex flex-row flex-wrap justify-center items-center max-w-md md:max-w-5xl mx-auto">
                 <li class="w-24 mb-10 mx-5 transition hover:scale-125 duration-300"
                     *ngFor="let techs of techDict | keyvalue">
-                    <app-skill-logo [techName]="techs.key"></app-skill-logo>
+                    <div pAnimateOnScroll enterClass="fadeinleft" leaveClass="fadeoutleft"
+                        class=" animation-duration-500 animation-ease-in-out">
+                        <app-skill-logo [techName]="techs.key"></app-skill-logo>
+                    </div>
                 </li>
             </ul>
             <!-- <app-animface-bg class="hidden md:block top-0 absolute -z-10 m-0 p-0 w-full h-full mx-auto"
@@ -76,10 +80,12 @@
     </section>
 
     <section class="bg-white" id="educations">
-        <h2 data-aos="fade" class="pt-10 mb-16 mx-auto text-center text-2xl font-semibold">My <span
+        <h2 pAnimateOnScroll enterClass="fadein"
+            class="pt-10 mb-16 mx-auto text-center text-2xl font-semibold duration-500">My <span
                 class="text-blue-500">Education</span></h2>
         <ul class="mx-6">
-            <li data-aos="zoom-in" class="mb-10 last-of-type:mb-0 mx-auto max-w-4xl shadow-lg"
+            <li pAnimateOnScroll enterClass="zoomin"
+                class="mb-10 last-of-type:mb-0 mx-auto max-w-4xl shadow-lg duration-500"
                 *ngFor="let infoDict of eduInfos">
                 <app-education-card [educationInfo]="infoDict"></app-education-card>
             </li>
@@ -87,20 +93,19 @@
     </section>
 
     <section class="bg-white pt-40 md:pb-20" id="contacts">
-        <h2 data-aos="fade" class="mb-16 mx-auto text-center text-2xl font-semibold">Contact <span
-                class="text-blue-500">Me</span></h2>
+        <h2 pAnimateOnScroll enterClass="fadein" class="mb-16 mx-auto text-center text-2xl font-semibold duration-500">
+            Contact <span class="text-blue-500">Me</span></h2>
         <ul
             class="max-w-6xl mx-auto flex flex-col justify-between items-center md:flex md:flex-row md:flex-wrap md:justify-around md:items-center">
-            <li data-aos="fade" class="mb-10 md:mb-0 min-w-[16rem] shadow-lg"
-                *ngFor="let contact of contactInfos; let i = index" [attr.data-aos-delay]="(i + 1) * 100">
+            <li pAnimateOnScroll enterClass="fadein" class="mb-10 duration-500 md:mb-0 min-w-[16rem] shadow-lg"
+                *ngFor="let contact of contactInfos">
                 <app-contact-card [contactInfo]="contact"></app-contact-card>
             </li>
         </ul>
     </section>
 
 
-    <app-scroll-top-btn data-aos="fade" data-aos-anchor="#projects" data-aos-anchor-placement="top-top"
-        class="fixed bottom-5 right-5 z-10"></app-scroll-top-btn>
+    <app-scroll-top-btn pAnimateOnScroll enterClass="fadein" class="fixed bottom-5 right-5 z-10 duration-500"></app-scroll-top-btn>
 
 
     <footer class="py-12 bg-black">

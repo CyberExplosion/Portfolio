@@ -1,8 +1,7 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IProjectInfo, ProjectInfos } from './my-projects';
 import { TechLogoPath } from './tech-list';
 import { EducationInfos, IEducationInfo } from './my-educations';
-import * as Aos from 'aos';
 import { ContactInfos, IContactInfo } from './my-contacts';
 import { CommonIcons, ICommonIcons } from './my-commonIcons';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
@@ -29,7 +28,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    Aos.init();
     this.projectInfos = ProjectInfos;
     this.eduInfos = EducationInfos;
     this.contactInfos = ContactInfos;
