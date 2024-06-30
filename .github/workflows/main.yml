@@ -10,10 +10,10 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
-    - name: Use Node.js of at least 16
+    - name: Use Node.js of at least 18
       uses: actions/setup-node@v3
       with:
-        node-version: 16.x
+        node-version: 18.x
         cache: 'npm'
     
     - name: Install dependency and start angular-cli-ghpages's Deploy action
