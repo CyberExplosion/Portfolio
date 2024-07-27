@@ -32,4 +32,5 @@ export const TechLogoPath: ITechLogoPath = {
     "NodeJS": "assets\\techIcons\\nodejs.svg",
     "Redux": "assets\\techIcons\\redux.svg",
     "Miro": "assets\\techIcons\\miro.svg",
+    "Terraform": "assets\\techIcons\\terraform.svg",
 }
